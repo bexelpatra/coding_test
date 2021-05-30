@@ -1,4 +1,4 @@
-package com.test.practice.hash;
+package com.test.practice.a_hash;
 
 import java.util.*;
 import java.util.function.Function;

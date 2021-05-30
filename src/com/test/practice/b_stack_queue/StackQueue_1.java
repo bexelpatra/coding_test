@@ -1,4 +1,4 @@
-package com.test.practice.stack_queue;
+package com.test.practice.b_stack_queue;
 
 import java.util.*;
 

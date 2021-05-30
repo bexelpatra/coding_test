@@ -1,8 +1,6 @@
-package com.test.practice.stack_queue;
+package com.test.practice.b_stack_queue;
 
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class StackQueue_2 {
     /*

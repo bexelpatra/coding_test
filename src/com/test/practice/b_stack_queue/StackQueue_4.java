@@ -1,4 +1,4 @@
-package com.test.practice.stack_queue;
+package com.test.practice.b_stack_queue;
 
 import java.util.Stack;
 
@@ -9,8 +9,9 @@ public class StackQueue_4 {
             int first = prices[i];
             int ans = 0;
             for(int j= i+1;j<prices.length;j++){
-                if(first<=prices[j]) {
-                    ans++;
+                ans++;
+                if(first>prices[j]) {
+                    break;
                 }
             }
 
@@ -35,6 +36,26 @@ public class StackQueue_4 {
         while (!beginIdxs.empty()) {
             int beginIdx = beginIdxs.pop();
             terms[beginIdx] = i - beginIdx - 1;
+        }
+
+        return terms;
+    }
+
+    public int[] solution2(int[] prices) {
+        int[] terms = new int[prices.length];
+        Stack<Integer> stack = new Stack<>();
+
+        stack.add(0);
+        for(int i=1; i< prices.length;i++){
+            while(!stack.isEmpty() && prices[i] < prices[stack.peek()]){
+                int index = stack.pop();
+                terms[index] = i - index;
+            }
+            stack.push(i);
+        }
+        while(!stack.isEmpty()){
+            int index = stack.pop();
+            terms[index] = prices.length - index - 1;
         }
 
         return terms;
