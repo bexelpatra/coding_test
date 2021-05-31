@@ -1,4 +1,5 @@
 import com.test.practice.c_heap.Heap_1;
+import com.test.practice.c_heap.Heap_2;
 import com.test.practice.c_heap.Heap_3;
 
 import java.util.*;
@@ -9,11 +10,12 @@ public class CodingTest {
 //        int[] p = new int[]{11, 13, 14, 13, 1, 3};
 //        int[] p = new int[]{1, 1, 9, 1, 1, 1};
 //        int[] s = new int[]{1, 1, 1, 1, 1, 1};
-        String[] pp =  new String[]{"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"};
-        String[] ppp =  new String[]{"I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333"};
+//        String[] pp =  new String[]{"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"};
+//        String[] ppp =  new String[]{"I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333"};
+        int[][] ints = new int[][]{{0,3},{1,9},{2,7},{30,5}};
         int loca = 0;
 //        new StackQueue_4().solution1(p);
-        System.out.println(new Heap_3().solution(pp));
+        System.out.println(new Heap_2().solution3(ints));
     }
 
     private static void m1() {
