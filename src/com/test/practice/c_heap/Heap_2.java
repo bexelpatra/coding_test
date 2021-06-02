@@ -53,15 +53,22 @@ public class Heap_2 {
         int now = start[1] + start[0];
         answer +=now;
 
+        int temp = now;
         while(!queue.isEmpty()){
-            while((queue.peek()!=null && queue.peek()[0]<=now) ||(queue.peek()!=null &&priorityQueue.isEmpty())){
-                priorityQueue.add(queue.poll());
+            while(queue.peek()!=null){
+                int[] job = queue.poll();
+                temp+=job[1];
+                if(job[0]<=temp){
+                    priorityQueue.add(job);
+                }else{
+                    break;
+                }
             }
             while(!priorityQueue.isEmpty()){
                 int[] work = priorityQueue.poll();
                 int r = work[0];
                 int t = work[1];
-                int sum = now - r >=0 ? now-r : 0;
+                int sum = now - r >0 ? now-r : 0;
                 answer += t +sum;
                 now += t;
             }
