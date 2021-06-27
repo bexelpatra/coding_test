@@ -10,6 +10,8 @@ public class StudentDto {
     private String b = "이신명재도하민정국훈치";
     private String c = "이신명재도하민정국훈치";
     private String name;
+    private int hak;
+    private int ban;
     private int age;
     private int kor;
     private int math;
@@ -22,6 +24,8 @@ public class StudentDto {
         this.kor = random.nextInt(100)+1;
         this.math = random.nextInt(100)+1;
         this.eng = random.nextInt(100)+1;
+        this.hak = random.nextInt(3)+1;
+        this.ban = random.nextInt(4)+1;
     }
 
     public static List<StudentDto> studentDtoList(int size){
@@ -33,10 +37,14 @@ public class StudentDto {
     }
     public String getName() { return name; }public void setName(String name) { this.name = name; }public int getAge() { return age; }public void setAge(int age) { this.age = age; }public int getKor() { return kor; }public void setKor(int kor) { this.kor = kor; }public int getMath() { return math; }public void setMath(int math) { this.math = math; }public int getEng() { return eng; }public void setEng(int eng) { this.eng = eng; }
 
+    public int getHak() { return hak; }public void setHak(int hak) { this.hak = hak; }public int getBan() { return ban; }public void setBan(int ban) { this.ban = ban; }
+
     @Override
     public String toString() {
         return "{" +
                 "name='" + name + '\'' +
+                ", hak=" + hak +
+                ", ban=" + ban +
                 ", age=" + age +
                 ", kor=" + kor +
                 ", math=" + math +
