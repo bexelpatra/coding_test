@@ -5,6 +5,7 @@ import com.test.practice.e_exhaustive_search.ExhaustiveSearch_3;
 import com.test.practice.f_dfs_bfs.DFSBFS_1;
 import com.test.practice.f_dfs_bfs.DFSBFS_2;
 import com.test.practice.f_dfs_bfs.DFSBFS_3;
+import com.test.practice.z_test.Test;
 import sun.security.pkcs11.wrapper.Functions;
 
 import java.util.*;
@@ -16,6 +17,7 @@ import java.util.stream.Stream;
 import static java.util.stream.Collectors.*;
 
 public class CodingTest {
+    static int count =0;
     public static void main(String[] args) {
 //        new ExhaustiveSearch_3().solution(24,24);
 //        new DFSBFS_2().solution(3,new int[][]{{1,1,0},{1,1,0},{0,0,1}});
@@ -34,7 +36,7 @@ public class CodingTest {
 //            e.printStackTrace();
 //        }
 //        System.out.println(aClass.getName());
-        Stream<StudentDto> studentDtoStream = StudentDto.studentDtoList(10).stream();
+//        Stream<StudentDto> studentDtoStream = StudentDto.studentDtoList(10).stream();
 //        Map<StudentDto,Double> studentDtoDoubleMap = StudentDto.studentDtoList(10).stream()
 //                .collect(Collectors.groupingBy(Function.identity(), HashMap::new,Collectors.averagingInt(studentDto ->{return studentDto.getEng()+studentDto.getKor()+studentDto.getMath(); })));
 //        Map<Integer,Double> studentDtoDoubleMap2 = StudentDto.studentDtoList(10).stream()
@@ -63,9 +65,16 @@ public class CodingTest {
 //                        Collectors.groupingBy(StudentDto::getBan,
 //                        collectingAndThen(maxBy(Comparator.comparingInt(StudentDto::getAge)),Optional::get)))).toString());
 
-        StudentDto.studentDtoList(10).stream().collect(Collectors.groupingBy(StudentDto::getHak,Collectors.collectingAndThen(groupingBy(StudentDto::getBan),integerListMap -> {
-            System.out.println(integerListMap.toString());
-            return null;
-        })));
+//        StudentDto.studentDtoList(10).stream().collect(Collectors.groupingBy(StudentDto::getHak,Collectors.collectingAndThen(groupingBy(StudentDto::getBan),integerListMap -> {
+//            System.out.println(integerListMap.toString());
+//            return null;
+//        })));
+//        System.out.println("strawberries".substring(2,5));
+//        String[] array = new String[]{"a","b","c"};
+//        List<String > list1 = Arrays.asList(array);
+//        List<String > list2 =new ArrayList<>(Arrays.asList(array));
+//        System.out.println(list1.equals(list2));
+        new Test().solution(new int[][]{{1, 1}, {2, 2}, {1, 2}});
     }
+
 }
