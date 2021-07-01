@@ -74,7 +74,8 @@ public class CodingTest {
 //        List<String > list1 = Arrays.asList(array);
 //        List<String > list2 =new ArrayList<>(Arrays.asList(array));
 //        System.out.println(list1.equals(list2));
-        new Test().solution(new int[][]{{1, 1}, {2, 2}, {1, 2}});
+//        new Test().solution(new int[]{95,90,99,99,80,99},new int[]{1,1,1,1,1,1});
+        new Test().solution(new int[]{1, 5, 2, 6, 3, 7, 4},new int[][]{{2,5,3,},{4,4,1},{1,7,3}});
     }
 
 }
