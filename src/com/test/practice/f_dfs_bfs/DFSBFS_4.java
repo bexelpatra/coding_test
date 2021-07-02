@@ -35,6 +35,8 @@ public class DFSBFS_4 {
 
     public void re(String to,List<Ticket> now,List<Ticket> result){
         now.stream().filter(ticket -> ticket.getTo().equals(to)).collect(Collectors.toList());
+
+        
     }
 
     private void recursive(){
