@@ -310,4 +310,84 @@ public class Test {
         }
         return answer;
     }
+
+    public int solution2(int[] prices, int[] discounts) {
+        int answer = 0;
+
+        List<Integer> p= Arrays.stream(prices).boxed().sorted((o1, o2) -> o2-o1).collect(Collectors.toList());
+        List<Integer> dc = Arrays.stream(discounts).boxed().sorted((o1, o2) -> o2-o1).collect(Collectors.toList());
+        int size = dc.size();
+        for(int i=0;i<p.size();i++){
+            if(size<=i){
+                answer+=p.get(i);
+            }
+            else{
+                answer+= p.get(i)*(100-dc.get(i))/100;
+            }
+        }
+        return answer;
+    }
+
+    public String[] solution(String s) {
+        int index = 0;
+        String temp = "";
+        boolean flag = false;
+        List<String> heads = new ArrayList<>();
+        List<String> tails = new ArrayList<>();
+        int last = s.length()/2+1;
+        for(int i=1; i<last ;i++){
+            flag = false;
+
+            String head = s.substring(index,i);
+            String tail = s.substring(s.length()-i,s.length()-index);
+            String rest = s.substring(i,s.length()-i);
+
+            temp = head + tail;
+            if(head.equals(tail)){
+                index = i;
+                heads.add(head);
+                tails.add(tail);
+                flag = true;
+            }
+            if(i == last -1 && rest.length()>0){
+                if(flag){
+                    temp = rest;
+                }else{
+                    temp = head+ rest+ tail;
+                }
+            }
+        }
+        int len = heads.stream().flatMapToInt(s1 -> IntStream.of(s1.length())).sum()*2;
+
+        if(s.length()!=len){
+            if(len == 0 ){
+                heads.add(temp);
+            }else{
+                heads.add(heads.size()/2+1,temp);
+            }
+        }
+        for(int i=tails.size()-1;i>=0;i--){
+            heads.add(tails.get(i));
+        }
+
+        String[] answer = new String[heads.size()];
+        for(int i=0;i<heads.size();i++){
+            answer[i] = heads.get(i);
+        }
+        return answer;
+    }
+    int counts = 0;
+    public int solution(String s, String t) {
+        int result = -1;
+        String res = "";
+        res = s.replaceFirst(t,"");
+
+        if(res.equals(s)){
+            return counts;
+        }else {
+            counts++;
+            solution(res,t);
+        }
+        return result;
+    }
 }
