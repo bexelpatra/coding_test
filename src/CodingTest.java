@@ -2,6 +2,7 @@ import com.sun.org.apache.bcel.internal.generic.ARETURN;
 import com.test.practice.StudentDto;
 import com.test.practice.ThreadSafe;
 import com.test.practice.e_exhaustive_search.ExhaustiveSearch_3;
+import com.test.practice.e_exhaustive_search.Permutations;
 import com.test.practice.f_dfs_bfs.DFSBFS_1;
 import com.test.practice.f_dfs_bfs.DFSBFS_2;
 import com.test.practice.f_dfs_bfs.DFSBFS_3;
@@ -77,7 +78,9 @@ public class CodingTest {
 //        new Test().solution(new int[]{95,90,99,99,80,99},new int[]{1,1,1,1,1,1});
 //        new Test().solution(new int[]{1, 5, 2, 6, 3, 7, 4},new int[][]{{2,5,3,},{4,4,1},{1,7,3}});
 //        new Test().solution2(new int[]{13000,88000,10000},new int[]{30});
-        new Test().solution("abcxyqwetyxyabc");
+//        new Test().solution("abcxyqwetyxyabc");
+        List<String> strings = new ArrayList<>();
+//        Permutations.perm2(new ArrayList<>(Arrays.asList("1","2","3","4","5","6","7","8")),strings,8,3);
     }
 
 }

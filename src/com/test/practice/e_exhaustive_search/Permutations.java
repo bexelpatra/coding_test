@@ -36,14 +36,12 @@ public class Permutations {
     // #1 순열(방식2)
     //https://codevang.tistory.com/297
     public static void perm2(List<String> arr, List<String> result, int n, int r) {
-
         if (r == 0) {
             System.out.println(result.toString());
             return;
         }
 
         for (int i = 0; i < n; i++) {
-
             result.add(arr.remove(i));
             perm2(arr, result, n - 1, r - 1);
             arr.add(i, result.remove(result.size() - 1));
@@ -78,5 +76,31 @@ public class Permutations {
             combination(arr, result, i + 1, n, r - 1);
             result.remove(result.size() - 1);
         }
+    }
+
+    public static void myPerm(List<String> arr, List<String> result, int n, int r) {
+
+        if (r == 0) {
+            System.out.println(result.toString());
+            return;
+        }
+
+        for (int i = 0; i < n; i++) {
+            result.add(arr.remove(i));
+            myPerm(arr,result,n-1,r-1);
+            arr.add(i,result.remove(result.size()-1));
+        }
+    }
+//    static int count = 0;
+    public static int fibo(int n){
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        return fibo(n-1) + fibo(n-2);
+    }
+
+    public static String re(){
+
+        return "";
     }
 }
