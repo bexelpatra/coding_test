@@ -390,4 +390,89 @@ public class Test {
         }
         return result;
     }
+    public int solution(int[][] board, int[] moves) {
+        int answer = 0;
+        List<Deque<Integer>> lists = new ArrayList<>();
+        for(int i=0;i<board.length;i++){
+            int finalI = i;
+            Deque<Integer> que = new ArrayDeque<>();
+            Arrays.stream(board).forEach(ints -> {
+                if(ints[finalI]!=0){
+                    que.add(ints[finalI]);
+                }
+            });
+            lists.add(que);
+        }
+        Stack<Integer> stack = new Stack<>();
+        for (int move : moves) {
+            Integer x = lists.get(move-1).pollFirst();
+            if(x!=null){
+                if(!stack.isEmpty()){
+                    if(stack.peek() == x){
+                        stack.pop();
+                        stackCount+=2;
+                    }else{
+                        stack.push(x);
+                    }
+
+                }else{
+                    stack.push(x);
+                }
+            }
+        }
+
+        System.out.println(stackCount);
+        return stackCount;
+    }
+
+    int stackCount = 0;
+    public void setStack(Stack<Integer> stack){
+        List<Integer> integers = new ArrayList<>(stack);
+        for(int i=0;i<integers.size()-1;i++){
+            if(integers.get(i) == integers.get(i+1)) {
+                integers.remove(i);
+                integers.remove(i+1);
+                stackCount+=2;
+            }
+        }
+        stack.clear();
+        stack.addAll(integers);
+    }
+
+    // 2019 카카오 개발자 겨울 인턴쉽 불량 사용자
+    public int solution2(String[] user_id, String[] banned_id) {
+        int answer = 0;
+        for (String s : user_id) {
+            for (String ban : banned_id) {
+                System.out.println(s.matches("^"+ban.replace("*","[a-zA-Z1-9]")+"$"));
+            }
+        }
+        return answer;
+    }
+
+    public static int solution(int N, int number) {
+        dfs(N, number, 0, 0);
+        if(answer>8)
+            return -1;
+        return answer;
+    }
+
+    static int answer = Integer.MAX_VALUE;
+    static void dfs(int n, int number, int idx, int sum) {
+        if(idx>8)
+            return;
+        if(sum == number) {
+            answer = Math.min(idx, answer);
+        }
+        int temp = 0;
+        for(int i=1; i<=8; i++) {
+            temp = temp*10 + n;
+            dfs(n, number, idx+i, sum+temp);
+            dfs(n, number, idx+i, sum-temp);
+            dfs(n, number, idx+i, sum/temp);
+            dfs(n, number, idx+i, sum*temp);
+        }
+    }
+
+
 }

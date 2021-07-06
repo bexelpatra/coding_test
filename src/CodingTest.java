@@ -1,11 +1,15 @@
 import com.sun.org.apache.bcel.internal.generic.ARETURN;
 import com.test.practice.StudentDto;
 import com.test.practice.ThreadSafe;
+import com.test.practice.e_exhaustive_search.ExhaustiveSearch_2;
 import com.test.practice.e_exhaustive_search.ExhaustiveSearch_3;
 import com.test.practice.e_exhaustive_search.Permutations;
 import com.test.practice.f_dfs_bfs.DFSBFS_1;
 import com.test.practice.f_dfs_bfs.DFSBFS_2;
 import com.test.practice.f_dfs_bfs.DFSBFS_3;
+import com.test.practice.g_dynamic_programming.DynamicProgramming_1;
+import com.test.practice.z_test.Hanoi;
+import com.test.practice.z_test.Kakao2019;
 import com.test.practice.z_test.Test;
 import sun.security.pkcs11.wrapper.Functions;
 
@@ -81,6 +85,17 @@ public class CodingTest {
 //        new Test().solution("abcxyqwetyxyabc");
         List<String> strings = new ArrayList<>();
 //        Permutations.perm2(new ArrayList<>(Arrays.asList("1","2","3","4","5","6","7","8")),strings,8,3);
+        Set<Integer> set = new HashSet<>();
+//        Hanoi.Hanoi(3,1,2,3);
+//        System.out.println(Hanoi.count);
+        // 2019 카카오 문제 1번
+//        new Test().solution(new int[][]{{0,0,0,0,0},{0,0,1,0,3,},{0,2,5,0,1,},{4,2,4,4,2},{3,5,1,3,1}},new int[]{1,5,3,5,1,2,1,4});
+//        new Kakao2019().solution(new String[]{"frodo", "fradi", "crodo", "abc123", "frodoc"},new String[]{"fr*d*", "*rodo", "******", "******"});
+
+        new DynamicProgramming_1().solution2(5,12);
+        System.out.println("끝");
+        DynamicProgramming_1.solution(5,12);
+//        Test.solution(5,12);
     }
 
 }

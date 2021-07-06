@@ -1,7 +1,9 @@
 package com.test.practice.e_exhaustive_search;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 순열 알고리즘에 대한 공부
@@ -60,6 +62,15 @@ public class Permutations {
             perm2(nums, result, depth + 1, n, r);
             nums.add(i, result[depth]);
         }
+    }
+    // #1 순열(방식 3) 프로그래머스에서 다른 사람들이 푼 방식
+    // 공통적으로 반복문안에 재귀가 들어간다. 원리를 파악하려면 시간이 조금 더 걸리겠다...
+    public static void permutation(String prefix, String str, Set<Integer> set) {
+        int n = str.length();
+        if (n == 0) System.out.println(prefix);
+        if(!prefix.equals("")) set.add(Integer.valueOf(prefix));
+        for (int i = 0; i < n; i++)
+            permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1, n), set);
     }
     // #2 조합
     //https://codevang.tistory.com/297
