@@ -8,23 +8,28 @@ public class DynamicProgramming_1 {
     public static int solution(int N, int number) {
         Set<Integer> set = new HashSet<>();
         cal(N,number,set,0,0,"");
+
         return set.stream().sorted().findFirst().orElse(0);
     }
 //    static void dfs(int n, int number, int idx, int sum) {
     static void cal(int n,int number,Set<Integer> set,int count,int sum,String x) {
+//        System.out.println(String.format("%s , index : %d",x,count));
         if(count > 8){
             return;
         }
         if(sum == number){
             set.add(count);
         }
-        System.out.println(x);
 //        System.out.println(count);
+        int temp = 0;
         for (int i = 1; i <= 8; i++) {
-            cal(n,number,set,count+i,sum+n,x+"+"+n);
-            cal(n,number,set,count+i,sum-n,x+"-"+n);
-            cal(n,number,set,count+i,sum*n,x+"*"+n);
-            cal(n,number,set,count+i,sum/n,x+"/"+n);
+//            temp = temp * 10 + n;
+            temp = n;
+            cal(n,number,set,count+1,sum+temp,x+"+"+temp);
+            cal(n,number,set,count+1,sum-temp,x+"-"+temp);
+            cal(n,number,set,count+1,sum*temp,x+"*"+temp);
+            cal(n,number,set,count+1,sum/temp,x+"/"+temp);
+            cal(n,number,set,count+2,sum+(temp * 10)+temp,x+"/"+temp);
         }
     }
     public static int solution2(int N, int number) {

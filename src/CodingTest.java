@@ -8,6 +8,8 @@ import com.test.practice.f_dfs_bfs.DFSBFS_1;
 import com.test.practice.f_dfs_bfs.DFSBFS_2;
 import com.test.practice.f_dfs_bfs.DFSBFS_3;
 import com.test.practice.g_dynamic_programming.DynamicProgramming_1;
+import com.test.practice.g_dynamic_programming.DynamicProgramming_2;
+import com.test.practice.g_dynamic_programming.DynamicProgramming_3;
 import com.test.practice.z_test.Hanoi;
 import com.test.practice.z_test.Kakao2019;
 import com.test.practice.z_test.Test;
@@ -91,11 +93,12 @@ public class CodingTest {
         // 2019 카카오 문제 1번
 //        new Test().solution(new int[][]{{0,0,0,0,0},{0,0,1,0,3,},{0,2,5,0,1,},{4,2,4,4,2},{3,5,1,3,1}},new int[]{1,5,3,5,1,2,1,4});
 //        new Kakao2019().solution(new String[]{"frodo", "fradi", "crodo", "abc123", "frodoc"},new String[]{"fr*d*", "*rodo", "******", "******"});
-
-        new DynamicProgramming_1().solution2(5,12);
-        System.out.println("끝");
-        DynamicProgramming_1.solution(5,12);
+//        DynamicProgramming_1.solution(5,12);
 //        Test.solution(5,12);
+//        new DynamicProgramming_2().solution2(new int[][]{{7},{3,8},{8,1,0},{2,7,4,4},{4,5,2,6,5}});
+//        new DynamicProgramming_3().solution2(4,3,new int[][]{{-1,-1}});
+        new DynamicProgramming_3().test();
+
     }
 
 }
