@@ -66,10 +66,31 @@ public class DynamicProgramming_3 {
         }
         return map[n-1][m-1] % (1000*100*100 +7);
     }
+
+    // 2021-8-22 다시 풀어본다.
+    // 아이디어를 기억하고 있으니 수월하게 풀렸으면한다.
+    public int solution3(int m, int n, int[][] puddles) {
+        int answer = 0;
+        int[][] path = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                path[i][j] = i+j;
+            }
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("i,j : %d,%d",i,j);
+            }
+            System.out.println();
+        }
+        return answer;
+    }
     @Test
     public void test(){
-        Assert.assertEquals(1000000007,1000*100*100*100 +7);
-        Assert.assertEquals(4,solution2(4,3,new int[][]{{2,2}}));
+//        Assert.assertEquals(1000000007,1000*100*100*100 +7);
+//        Assert.assertEquals(4,solution2(4,3,new int[][]{{2,2}}));
+        solution3(4,3,new int[][]{{2,2}});
     }
 
 }

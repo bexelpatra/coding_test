@@ -26,6 +26,7 @@ import static java.util.stream.Collectors.*;
 public class CodingTest {
     static int count =0;
     public static void main(String[] args) {
+
 //        new ExhaustiveSearch_3().solution(24,24);
 //        new DFSBFS_2().solution(3,new int[][]{{1,1,0},{1,1,0},{0,0,1}});
 
@@ -97,7 +98,7 @@ public class CodingTest {
 //        Test.solution(5,12);
 //        new DynamicProgramming_2().solution2(new int[][]{{7},{3,8},{8,1,0},{2,7,4,4},{4,5,2,6,5}});
 //        new DynamicProgramming_3().solution2(4,3,new int[][]{{-1,-1}});
-        new DynamicProgramming_3().test();
+//        new DynamicProgramming_3().test();
 
     }
 
