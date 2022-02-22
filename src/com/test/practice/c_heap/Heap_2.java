@@ -1,6 +1,10 @@
 package com.test.practice.c_heap;
+import com.test.practice.MyUtil;
+import org.junit.Test;
+
 import java.util.*;
 public class Heap_2 {
+    // 오답
     public int solution(int[][] jobs) {
         int answer = 0;
         List<int[]> list = new ArrayList<>();
@@ -17,7 +21,7 @@ public class Heap_2 {
         }
         return answer;
     }
-
+    // 오답
     public int solution2(int[][] jobs) {
         int answer = 0;
         PriorityQueue<int[]> list = new PriorityQueue<>((o1, o2) ->{
@@ -40,11 +44,12 @@ public class Heap_2 {
         }
         return answer/jobs.length;
     }
+    // 오답
     public int solution3(int[][] jobs) {
         int answer = 0;
 
-        PriorityQueue<int[]> queue = new PriorityQueue<>((o1, o2) -> o1[0]-o2[0]);
-        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>((o1, o2) -> o1[1]-o2[1]);
+        PriorityQueue<int[]> queue = new PriorityQueue<>();
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>();
 
         for (int[] job : jobs) {
             queue.add(job);
@@ -75,5 +80,36 @@ public class Heap_2 {
 
         }
         return answer/jobs.length;
+    }
+    public int solution4(int[][] jobs) {
+        int answer = 0;
+        Arrays.sort(jobs,(o1, o2) -> o1[0]-o2[0]);
+        PriorityQueue<int[]> q = new PriorityQueue<>((o1, o2) -> o1[0]-o2[0]);
+        int now = 0;
+        int count =0;
+        int index =0;
+        while(count < jobs.length){
+            while(index< jobs.length && jobs[index][0]<=now){
+                q.add(jobs[index++]);
+            }
+
+            if(q.isEmpty()){
+                now = jobs[index][0];
+            }else {
+                int[] temp = q.poll();
+                answer += temp[1] -temp[0] + now;
+                now += temp[1];
+                count++;
+            }
+        }
+
+        System.out.println(answer/jobs.length);
+        return (int)Math.floor(answer/jobs.length);
+    }
+
+
+    @Test
+    public void test(){
+        solution4(MyUtil.squareArray("[[0, 3], [1, 9], [2, 6]]"));
     }
 }
