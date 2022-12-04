@@ -5,12 +5,62 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class Baek1700 {
 
     public static void main(String[] args) throws Exception{
         sol1();
+    }
+    public static void solMine()throws Exception{
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(reader.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+
+        int[] order = new int[k];
+        st = new StringTokenizer(reader.readLine());
+        for (int i = 0; i < order.length; i++) {
+            order[i] = Integer.parseInt(st.nextToken());
+        }
+        boolean[] used = new boolean[101];
+        int using =0;
+        int answer = 0;
+
+        for (int i = 0; i < k; i++) {
+            int temp = order[i];
+            if (used[temp]){
+                continue;
+            }
+            if (using<n){
+                using+=1;
+                used[temp] = true;
+                continue;
+            }
+            // 다 채우고 나서는? 다음번에 쓰이나 췤
+            List<Integer> list = new ArrayList<>();
+            for (int j = i; j < k; j++) {
+                if(used[order[j]] && !list.contains(order[j])){
+                    list.add(order[j]);
+                }
+            }
+
+            if (n!= list.size()){ // 이것의 의미를 잘 모르겠네...
+                for (int j = 0; j < used.length; j++) {
+                    if(used[j] && !list.contains(j)){
+                        used[j] = false;
+                        break;
+                    }
+                }
+            }else{ // 다 사용된다 -> 마지막에 사용되는 친구를 제거
+                int rm = list.get(list.size()-1);
+                used[rm] = false;
+            }
+            used[temp] = true;
+            answer+=1;
+        }
+        System.out.println(answer);
     }
     //https://steady-coding.tistory.com/55
     public static void sol1() throws Exception {
