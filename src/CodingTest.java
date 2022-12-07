@@ -1,27 +1,7 @@
-import com.sun.org.apache.bcel.internal.generic.ARETURN;
-import com.test.practice.StudentDto;
-import com.test.practice.ThreadSafe;
-import com.test.practice.e_exhaustive_search.ExhaustiveSearch_2;
-import com.test.practice.e_exhaustive_search.ExhaustiveSearch_3;
-import com.test.practice.e_exhaustive_search.Permutations;
-import com.test.practice.f_dfs_bfs.DFSBFS_1;
-import com.test.practice.f_dfs_bfs.DFSBFS_2;
-import com.test.practice.f_dfs_bfs.DFSBFS_3;
-import com.test.practice.g_dynamic_programming.DynamicProgramming_1;
-import com.test.practice.g_dynamic_programming.DynamicProgramming_2;
-import com.test.practice.g_dynamic_programming.DynamicProgramming_3;
-import com.test.practice.z_test.Hanoi;
-import com.test.practice.z_test.Kakao2019;
-import com.test.practice.z_test.Test;
-import sun.security.pkcs11.wrapper.Functions;
-
-import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CodingTest {
     static int count =0;
