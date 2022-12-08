@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 public class Baek10775 {
     public static void main(String[] args) throws Exception{
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        greedy(reader);
-//        unionFind(reader);
+//        greedy(reader);
+        unionFind(reader);
 
 //        int[] test = new int[6];
 //        for (int i = 1; i < 6; i++) {
@@ -24,7 +24,7 @@ public class Baek10775 {
     private static void unionFind(BufferedReader reader) throws IOException {
         int n = Integer.parseInt(reader.readLine());
         int plane = Integer.parseInt(reader.readLine());
-        int[] parent = new int[100001];
+        int[] parent = new int[n+1];
         for (int i = 1; i < n+1; i++) {
             parent[i] = i;
         }
@@ -32,13 +32,15 @@ public class Baek10775 {
         int ans = 0;
         for (int i = 0; i < plane; i++) {
             int now = Integer.parseInt(reader.readLine());
-            if(now>n) break;
-            if(find(now,parent)==0) {
-                break;
-            }else{
+//            if(now>n) break;
+            int pk = find(now,parent);
+            if(pk!=0) {
+                union(pk,pk-1,parent);
                 ans+=1;
+            }else{
+                break;
             }
-            union(now,now-1,parent);
+
         }
         System.out.println(ans);
     }
@@ -50,6 +52,7 @@ public class Baek10775 {
         boolean[] parking = new boolean[100001];
 
         int ans = 0;
+
         boolean stop = true;
         for (int i = 0; i < plane; i++) {
             int now = Integer.parseInt(reader.readLine());
