@@ -10,19 +10,31 @@ public class Baek2812 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         //sol1(reader);
         sol2(reader);
-//        Deque<Integer> q = new ArrayDeque<>(); // 스택 같은 것 poll 은 머리
-//        q.push(1);
-//        q.push(2);
-//        q.push(3);
 
-//        q.push(4);
-//        q.push(5);
-//
-//        System.out.println(q.poll());
-//        System.out.println(q.pollLast());
-//
+    }
+    //https://steady-coding.tistory.com/54
+    private static void sol4(BufferedReader reader) throws IOException{
+        StringTokenizer st = new StringTokenizer(reader.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        char[] target =  reader.readLine().toCharArray();
+        Deque<Character> dq = new ArrayDeque<>();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < target.length; i++) {
+            while (K > 0 && !dq.isEmpty() && dq.getLast() < target[i]) {
+                dq.removeLast();
+                K--;
+            }
+            dq.addLast(target[i]);
+        }
+        while (dq.size() > K) {
+            sb.append(dq.removeFirst());
+        }
+        System.out.println(sb.toString());
     }
 
+
+    // 75% 가량에서 틀린다...
     private static void sol2(BufferedReader reader) throws IOException {
         StringTokenizer st = new StringTokenizer(reader.readLine());
         int N = Integer.parseInt(st.nextToken());
@@ -31,10 +43,8 @@ public class Baek2812 {
         int finish = N-K;
         Deque<Integer> q = new ArrayDeque<>();
         int i=0;
-        while(finish!=q.size()){
-            if (i ==N){
-                break;
-            }
+        while(i<N){
+
             if(K==0){
                 q.push(target[i]-'0');
                 i++;
@@ -43,13 +53,12 @@ public class Baek2812 {
             if(q.isEmpty()){
                 q.push(target[i]-'0');
             }else{
-                if(q.peek() <target[i]-'0'){
+                while(q.peek() <target[i]-'0' && K>0){
                     q.poll();
-                    q.push(target[i]-'0');
                     K-=1;
-                }else{
-                    q.push(target[i]-'0');
+                    if(q.isEmpty()) break;
                 }
+                q.push(target[i]-'0');
             }
             i+=1;
         }
@@ -97,5 +106,78 @@ public class Baek2812 {
 
         System.out.println(sb.toString());
     }
+    //https://velog.io/@solser12/%EB%B0%B1%EC%A4%80-2812-%ED%81%AC%EA%B2%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0-JAVA
+    public static void sol3() throws Exception{
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+
+        String input = br.readLine();
+
+        Stack stack = new Stack(N);
+        int count = 0;
+        for (int i = 0; i < N; i++) {
+            int num = input.charAt(i) - '0';
+
+            if (!stack.isEmpty()) {
+                while (!stack.isEmpty() && count < K) {
+                    if (stack.peek() < num) {
+                        stack.pop();
+                        count++;
+                    } else {
+                        break;
+                    }
+                }
+            }
+
+            stack.push(num);
+
+            if (count == K) {
+                sb.append(input.substring(i+1));
+                break;
+            }
+        }
+
+        while (!stack.isEmpty()) {
+            int num = stack.pop();
+            if (count < K) {
+                count++;
+                continue;
+            }
+            sb.insert(0, num);
+        }
+
+        System.out.println(sb);
+
+        br.close();
+    }
+
+    public static class Stack {
+        int[] arr;
+        int idx;
+
+        public Stack(int size) {
+            this.arr = new int[size];
+        }
+
+        public void push(int num) {
+            arr[idx++] = num;
+        }
+
+        public boolean isEmpty() {
+            return idx == 0;
+        }
+
+        public int peek() {
+            return arr[idx -1];
+        }
+
+        public int pop() {
+            return arr[--idx];
+        }
+    }
 }
