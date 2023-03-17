@@ -5,10 +5,10 @@ import java.io.InputStreamReader;
 
 public class Baek9663 {
 
-	static int[] moveX = { 1, 1, -1, -1 };
-	static int[] moveY = { 1, -1, 1, -1 };
+	static int[] moveX = { 1, 1 };
+	static int[] moveY = { 1,-1 };
 	static int N = 0;
-
+	static int count =0;
 	public static void main(String[] args) throws Exception {
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -16,44 +16,55 @@ public class Baek9663 {
 		int total = 0;
 		boolean[][] map = new boolean[N][N];
 
-		
-		System.out.println(total);
+		pick(map, 0, 0);
+		System.out.println(count);
 
 	}
 	private static void pick(boolean[][] map, int x, int y) {
-		if(!map[x][y]) {
-			removeX(map, x);
-			removeY(map, y);
-			removeCross(map, x, y);
-		}else {
-			
+		if(x==N-1) {
+			count+=1;
+			return;
+		}
+		for (int i = 0; i < N; i++) {
+			if(!map[x][i]) {
+				removeY(map, i,true);
+				removeCross(map, x, i, true);
+				
+				System.out.printf("x : %d , y : %d\n",x,i);
+				pprint(map);
+				pick(map, x+1, i);
+				
+				removeY(map, i,false);
+				removeCross(map, x, i, false);
+			}
 		}
 	}
 	
-	private static void removeY(boolean[][] map, int y) {
+	private static void removeX(boolean[][] map, int y) {
 		for (int i = 0; i < map[y].length; i++) {
 			map[y][i] = true;
 		}
 	}
 
-	private static void removeX(boolean[][] map, int x) {
+	private static void removeY(boolean[][] map, int x,boolean flag) {
 		for (int i = 0; i < map.length; i++) {
-			map[i][x] = true;
+			map[i][x] = flag;
 		}
 	}
 
-	private static void removeCross(boolean[][] map, int x, int y) {
+	private static void removeCross(boolean[][] map, int x, int y,boolean flag) {
 		int tempX = x;
 		int tempY = y;
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 2; i++) {
 			while (true) {
+				tempX += moveX[i];
+				tempY += moveY[i];				
 				if (tempX < 0 || tempY < 0)
 					break;
 				if (tempX > N - 1 || tempY > N - 1)
 					break;
-				map[tempX][tempY] = true;
-				tempX += moveX[i];
-				tempY += moveY[i];
+
+				map[tempX][tempY] = flag;
 			}
 			tempX = x;
 			tempY = y;
@@ -65,9 +76,9 @@ public class Baek9663 {
 		for (boolean[] bs : map) {
 			for (boolean b : bs) {
 				if(b) {
-					sb.append("0");					
+					sb.append("0 ");					
 				}else {					
-					sb.append("1");					
+					sb.append("1 ");					
 				}
 			}
 			sb.append("\n");

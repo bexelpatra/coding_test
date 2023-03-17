@@ -7,5 +7,8 @@
 	<classpathentry kind="lib" path="D:/class/myLib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="D:/class/myLib/jakarta.mail-2.0.1.jar"/>
 	<classpathentry kind="lib" path="D:/class/myLib/javax.mail-1.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-5.2.3.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/springloaded-1.2.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-src-5.2.3-20220909.zip"/>
 	<classpathentry kind="output" path="out/production/coding_test"/>
 </classpath>
