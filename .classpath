@@ -7,8 +7,25 @@
 	<classpathentry kind="lib" path="D:/class/myLib/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="D:/class/myLib/jakarta.mail-2.0.1.jar"/>
 	<classpathentry kind="lib" path="D:/class/myLib/javax.mail-1.6.2.jar"/>
-	<classpathentry kind="lib" path="D:/class/myLib/poi-5.2.3.jar"/>
 	<classpathentry kind="lib" path="D:/class/myLib/springloaded-1.2.8.RELEASE.jar"/>
-	<classpathentry kind="lib" path="D:/class/myLib/poi-src-5.2.3-20220909.zip"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3-android.via.java.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3-android.via.java-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3-android.via.java-resources.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3-gridweb.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3-gridweb-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3-gridweb-resources.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/aspose-cells-23.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-4.1.2 (1).jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-ooxml-4.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-ooxml-schemas-4.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-scratchpad-4.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/xmlbeans-3.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/commons-compress-1.21.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-5.2.3.jar"/>
+	<classpathentry kind="lib" path="D:/class/myLib/poi-ooxml-5.2.3.jar"/>
 	<classpathentry kind="output" path="out/production/coding_test"/>
 </classpath>
