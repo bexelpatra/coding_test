@@ -46,7 +46,7 @@ public class ExelEdit {
 					file.delete();
 				}
 			}
-			System.out.println("\t"+TEL.getName() + " job done");
+			System.out.println(TEL.getName() + " job done");
 			System.out.println();
 		}
 		System.out.println();
@@ -93,7 +93,7 @@ public class ExelEdit {
 			// 상단 2줄에 값 옮겨 넣기
 			shit.getRow(11).getCell(1).setCellValue(TEL.getName());
 			copyRowValue(shit.getRow(13),shit.getRow(13+TEL.getRow()),0);
-			copyRowValue(shit.getRow(14),shit.getRow(13+TEL.getRow()),0);
+			copyRowValue(shit.getRow(14),shit.getRow(14+TEL.getRow()),0);
 
 			// 나머지 줄 삭제
 			for (int i = 16; i < 26; i++) {
@@ -137,7 +137,7 @@ public class ExelEdit {
 
 			x.close();
 			os.close();
-			System.out.println(src.getName());
+			System.out.println("\t"+src.getName());
 		}
 	}
 
