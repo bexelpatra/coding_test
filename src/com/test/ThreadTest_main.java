@@ -5,9 +5,9 @@ public class ThreadTest_main {
 	public static void main(String[] args) throws InterruptedException {
 		// main daemon
 		long start = System.currentTimeMillis();
-		Thread[] ts = new ThreadTest_Thread[10000];
+		Thread[] ts = new ThreadTest_Thread[10];
 		for (int i = 0; i < ts.length; i++) {
-			ts[i] = new ThreadTest_Thread(10000);
+			ts[i] = new ThreadTest_Thread(250000);
 			ts[i].start();
 //			ts[i].join();		
 		}

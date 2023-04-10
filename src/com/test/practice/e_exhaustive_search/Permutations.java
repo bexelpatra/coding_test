@@ -74,7 +74,7 @@ public class Permutations {
     }
     // #2 조합
     //https://codevang.tistory.com/297
-    private static void combination(List<String> arr, List<String> result, int index, int n, int r) {
+    public static void combination(List<String> arr, List<String> result, int index, int n, int r) {
 
         if (r == 0) {
             System.out.println(result.toString());

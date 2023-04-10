@@ -18,7 +18,7 @@ public class DoAllTheThingsIShouldveDone {
 	}
 
 	private static void extracted(String filename) throws IOException {
-		System.out.println("enter how many lines you gonna input");
+		System.out.println("enter how many lines you gonna input"); // 검색어 개수를 입력
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(input.readLine());
 		String[] searchWords = new String[N];
