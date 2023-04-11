@@ -17,9 +17,9 @@ public class Permutations {
             print(arr,k);
             return;
         } for (int i = depth; i < n; i++) {
-            swap(arr, i, depth);
+            swap(arr, depth, i);
             perm(arr, depth + 1, n, k);
-            swap(arr, i, depth);
+            swap(arr, depth, i);
         }
     }
 
