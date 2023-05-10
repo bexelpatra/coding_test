@@ -5,6 +5,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
+/**
+ * 여러 파일에 흩어져있는 파일들을 원하는 곳 하나로 뭉쳐버리기
+ * @author jaisung choi
+ *
+ */
 public class GatherPng {
 	static String to = "D:\\제비\\참고자료\\모바일운전면허_인수인계\\1. 시퀀스\\시퀀스이미지통합\\";
 	public static void main(String[] args) throws Exception{
