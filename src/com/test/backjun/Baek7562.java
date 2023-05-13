@@ -11,7 +11,8 @@ public class Baek7562 {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		int loop = Integer.parseInt(reader.readLine());
 		for (int i = 0; i < loop; i++) {
-			dojob(reader);
+//			dojob(reader);
+			dojob2(reader);
 		}
 	}
 	public static void dojob(BufferedReader reader) throws Exception{
@@ -61,9 +62,60 @@ public class Baek7562 {
 			
 		}
 		System.out.println(yx[2]);
-//		dfs(map,new boolean[i][i], position[0], position[1],0);
 	}
-	
+	public static void dojob2(BufferedReader reader) throws Exception{
+		int i=Integer.parseInt(reader.readLine());
+		int[] nextY = {2,2,1,1,-2,-2,-1,-1};
+		int[] nextX = {1,-1,2,-2,1,-1,2,-2};
+		int[] position = new int[4];
+		StringTokenizer st = null;
+
+		for (int j = 0; j < position.length; j++) {
+			if(j%2==0) {
+				st = new StringTokenizer(reader.readLine());
+			}
+			position[j] = Integer.parseInt(st.nextToken());
+		}
+
+		if(position[0]==position[2]&&position[1]==position[3]) {
+			System.out.println(0);
+			return;
+		}
+		
+		Deque<int[]> q = new LinkedList<>();
+		q.add(new int[] {position[0],position[1]});
+		boolean[][] visited = new boolean[i][i];
+		int c = 0;
+		int[] current=null;
+		int size =0;
+		while(!q.isEmpty()) {
+			size = q.size();
+			for (int k = 0; k < size; k++) {				
+				current = q.poll();
+				
+				if(visited[current[0]][current[1]]) {
+					continue;
+				}
+				visited[current[0]][current[1]] = true;
+				
+				if(current[0] == position[2] && current[1]== position[3]) {
+					System.out.println(c);
+				}
+				
+				for (int j = 0; j < 8; j++) {
+					int nX = current[0]+nextX[j];
+					int nY = current[1]+nextY[j];
+					
+					if(nX <0 || nY<0 || nX>i-1 || nY>i-1) {
+						continue;
+					}else {
+						q.add(new int[]{nX,nY});
+					}
+				}
+			}
+			c+=1;
+		}
+	}
 	// overflow로 터져버린다...
 //	public static void dfs(int[][] map,boolean[][] visited,int x, int y,int count) {
 //		if(map.length-1< x || map.length-1< y || x<0 || y<0) {
