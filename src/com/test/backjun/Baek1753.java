@@ -35,6 +35,8 @@ public class Baek1753 {
 			list.get(from).add(new Point(to,price));
 		}
 		pq.add(new Point(start,0));
+		value[start] = 0;
+		
 		while(!pq.isEmpty()) {
 			Point now = pq.poll();
 			if(visited[now.to]) continue;
@@ -48,9 +50,7 @@ public class Baek1753 {
 			}
 		}
 		StringBuilder sb = new StringBuilder();
-		sb.append(0);
-		sb.append("\n");
-		for (int i = 2; i < value.length; i++) {
+		for (int i = 1; i < value.length; i++) {
 			sb.append(value[i]==Integer.MAX_VALUE ? "INF": value[i]);
 			sb.append("\n");
 		}
