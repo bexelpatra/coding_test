@@ -26,16 +26,16 @@ public class Baek11053 {
 					if (nums[j] < nums[i] && dp[j] + 1 > dp[i]) {
 						dp[i] = dp[j] + 1;
 					}
-//					System.out.println(Arrays.toString(dp));
+					// System.out.println(Arrays.toString(dp));
 				}
 			}
 		}
 		int answer = Arrays.stream(dp)
-							.max(Comparator.naturalOrder())
-							.get();
+				.max(Comparator.naturalOrder())
+				.get();
 		System.out.println(answer);
-//		my1(reader);
-//		method2(reader);
+		// my1(reader);
+		// method2(reader);
 	}
 
 	private static void method2(BufferedReader reader) throws IOException {
@@ -73,6 +73,7 @@ public class Baek11053 {
 		return dp[N];
 	}
 
+	// baek11054
 	private static void my1(BufferedReader reader) throws IOException {
 		int n = Integer.parseInt(reader.readLine());
 		int[] list = new int[n];
@@ -102,12 +103,12 @@ public class Baek11053 {
 		int max = -1;
 		for (int i = 0; i < n; i++) {
 			int temp = dpLeft[i]
-//					+dpRight[i]
+			// +dpRight[i]
 			;
 			max = Math.max(temp, max);
 		}
-//		System.out.println(sb1.toString());
-//		System.out.println(sb2.toString());
+		// System.out.println(sb1.toString());
+		// System.out.println(sb2.toString());
 		System.out.println(max);
 	}
 }
