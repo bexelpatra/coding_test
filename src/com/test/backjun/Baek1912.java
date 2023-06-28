@@ -13,6 +13,7 @@ public class Baek1912 {
         sol2(reader);
     }
 
+    // 예전에 풀었던 방식
     private static void sol2(BufferedReader reader) throws Exception {
         int n = Integer.parseInt(reader.readLine());
         int[] list = new int[n];
@@ -34,6 +35,7 @@ public class Baek1912 {
 
     }
 
+    // 내가 풀은 방식 2023-06-20
     private static void sol1(BufferedReader reader) throws IOException {
         int n = Integer.parseInt(reader.readLine());
         int[] list = new int[n];
