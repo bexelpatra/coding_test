@@ -1,4 +1,4 @@
-package com.test;
+package com.test.ETC;
 
 public class Syncronized1 {
 	public static void main(String[] args) {

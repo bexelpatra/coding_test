@@ -1,4 +1,4 @@
-package com.test;
+package com.test.ETC;
 
 import java.io.File;
 

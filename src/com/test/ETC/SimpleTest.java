@@ -1,4 +1,4 @@
-package com.test;
+package com.test.ETC;
 
 import java.util.Arrays;
 import java.util.List;

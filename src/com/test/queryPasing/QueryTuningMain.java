@@ -30,16 +30,32 @@ public class QueryTuningMain {
 				String temp = "";
 				while ((temp = reader.readLine()) != null) {
 					temp = temp.trim().toLowerCase() +" ";
-					if (temp.startsWith("</select")) {
+					if (temp.startsWith("</select")) { // select문만 건져내기
 						arr.add(sb.toString());
 						break;						
 					}
-					sb.append(temp.replace(System.lineSeparator(), " "));
+					// sb.append(temp.replace(System.lineSeparator(), " "));
+					// temp = temp.replaceAll("\b", "");
+					sb.append(temp);
 				}
 
 			}
 		}
-		boolean skip = false;
+		
+		for (String string : arr) {
+			String temp = TuningUtils.removeData(string,"<![cdata[","]]>",true);
+			temp = TuningUtils.removeData(temp,"<!--","-->",false);
+			System.out.println(temp);
+		}
+
+
+		// secondShot(list, stack, now, arr, skip);
+//		fuckedup(reader, list, stack, now);
+
+	}
+
+	// 조건절 분기
+	private static void secondShot(List<Table> list, Stack<Table> stack, Table now, List<String> arr, boolean skip) {
 		for (String query : arr) {
 //			System.out.println(query);
 			String[] words = query.split(" ");
@@ -71,8 +87,6 @@ public class QueryTuningMain {
 			list.add(now);
 			System.out.println();
 		}
-//		fuckedup(reader, list, stack, now);
-
 	}
 
 	/**
