@@ -27,25 +27,25 @@ public class QueryTuningMain {
 			line = line.trim();
 			StringBuffer sb = new StringBuffer();
 			if (line.toLowerCase().startsWith("<select")) {
-				String temp = "";
-				while ((temp = reader.readLine()) != null) {
-					temp = temp.trim().toLowerCase() +" ";
-					if (temp.startsWith("</select")) { // select문만 건져내기
+				String innerLine = "";
+				while ((innerLine = reader.readLine()) != null) {
+					innerLine = innerLine.trim().toLowerCase() +" ";
+					if (innerLine.startsWith("</select")) { // select문만 건져내기
 						arr.add(sb.toString());
 						break;						
 					}
 					// sb.append(temp.replace(System.lineSeparator(), " "));
 					// temp = temp.replaceAll("\b", "");
-					sb.append(temp);
+					innerLine = TuningUtils.removeData(innerLine,"<![cdata[","]]>",true);
+					innerLine = TuningUtils.removeData(innerLine,"<!--","-->",false);
+					sb.append(innerLine);
 				}
 
 			}
 		}
 		
 		for (String string : arr) {
-			String temp = TuningUtils.removeData(string,"<![cdata[","]]>",true);
-			temp = TuningUtils.removeData(temp,"<!--","-->",false);
-			System.out.println(temp);
+			System.out.println(string);
 		}
 
 
