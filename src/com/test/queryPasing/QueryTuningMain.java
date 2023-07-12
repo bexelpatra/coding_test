@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class QueryTuning {
+public class QueryTuningMain {
 
 	public static void main(String[] args) throws Exception {
 		File file = new File("D:\\gdsMgmtMapper.xml");
