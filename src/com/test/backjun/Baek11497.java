@@ -1,4 +1,4 @@
-package com.test;
+package com.test.backjun;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

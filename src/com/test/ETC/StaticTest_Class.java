@@ -1,4 +1,4 @@
-package com.test;
+package com.test.ETC;
 
 public class StaticTest_Class {
 	public static Integer staticField=0;

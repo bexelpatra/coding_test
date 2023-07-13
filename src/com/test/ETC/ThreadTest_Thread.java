@@ -1,4 +1,4 @@
-package com.test;
+package com.test.ETC;
 
 public class ThreadTest_Thread extends Thread{
 
