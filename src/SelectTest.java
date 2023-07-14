@@ -18,7 +18,6 @@ public class SelectTest {
                 .replaceAll("\\s+", " ") // 띄어쓰기 하나로 줄이기
                 // .replaceAll("<!--(\\s)?([a-zA-Z]*)?(\\s)?-->", "") // 띄어쓰기 하나로 줄이기
                 .replaceAll("<!--[^>](.*?)-->", "") // 띄어쓰기 하나로 줄이기
-
                 .replaceAll("/\\*()+\\*/", "");
         System.out.println(result);
         System.out.println("/* c8 내가 사라져줄것같아? */".replaceAll("/\\*()+\\*/", ""));

@@ -19,7 +19,7 @@ public class Baek1753 {
 		PriorityQueue<Point> pq = new PriorityQueue<Point>();
 		List<List<Point>> list = new ArrayList<>();
 
-		int[] value = new int[V+1];
+		int[] value = new int[V+1];	
 		boolean[] visited= new boolean[V+1];
 		
 		for (int i = 0; i < V+1; i++) {
