@@ -119,3 +119,4 @@ out/production/coding_test/com/test/TestJWT.class
 out/production/coding_test/PaymentDto.class
 *.class
 .classpath
+.vscode/settings.json
