@@ -76,4 +76,38 @@ public class Baek17413 {
         }
         System.out.println(main.toString());
     }
+
+    // https://www.acmicpc.net/source/35356628
+    private static void reference_1(BufferedReader reader) throws IOException {
+        char[] chars = reader.readLine().toCharArray();
+        int idx = 0;
+        while (idx < chars.length) {
+            if (chars[idx] == '<') {
+                while (chars[idx++] != '>') { // idx 숫자만 올린다.
+                }
+            } else if (Character.isLetterOrDigit(chars[idx])) {
+                int start = idx;
+                while (idx < chars.length && chars[idx] != '<' && chars[idx] != ' ') {
+                    idx += 1;
+                }
+                int end = idx - 1;
+                reverse(chars, start, end);
+                if (idx < chars.length && chars[idx] != '<') {
+                    idx += 1;
+                }
+            }
+        }
+        System.out.println(chars);
+    }
+
+    private static void reverse(char[] chars, int start, int end) {
+        while (start < end) {
+            char temp = chars[start];
+            chars[start] = chars[end];
+            chars[start] = temp;
+            start += 1;
+            end -= 1;
+        }
+    }
+
 }
