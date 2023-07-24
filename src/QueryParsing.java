@@ -4,8 +4,8 @@ import java.util.List;
 public class QueryParsing {
     public static void main(String[] args) {
 
-        String query = "";
-        String rawParam = ""
+        String query = "SELECT DATE_FORMAT(REGIST_DT, '%Y-%m-%d') as beginDate FROM TB_MRHST_MANAGE INNER JOIN ( SELECT DISTINCT(confm.CONFM_MANAGE_ID) as CONFM_MANAGE_ID FROM TB_CONFM_MANAGE confm INNER JOIN TB_MNGR_GROUP_MANAGE gp ON confm.MNGR_GROUP_ID = gp.MNGR_GROUP_ID WHERE confm.REGISTER_ID = ? OR gp.TELECOM_CODE = ? ) X ON MRHST_MANAGE_ID = X.CONFM_MANAGE_ID ORDER BY REGIST_DT ASC LIMIT 1 ";
+        String rawParam = "a45hvn(String), 1002003,1002002,1002001(String)"
                 .replaceAll(" ", "");
         List<String> list = new ArrayList<>();
         List<String> tList = new ArrayList<>();

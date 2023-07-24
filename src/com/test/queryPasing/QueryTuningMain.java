@@ -12,13 +12,14 @@ import java.util.Stack;
 public class QueryTuningMain {
 
 	public static void main(String[] args) throws Exception {
-		File file = new File("D:\\gdsMgmtMapper.xml");
+		// File file = new File("D:\\gdsMgmtMapper.xml");
+		File file = new File("D:/class/MDL/MLIF/webapp/WEB-INF/sqlmap/mariadb/mlif/trnsmit/trnsmitMapper.xml");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 		String line = "";
 		List<Table> list = new ArrayList<>();
 		Stack<Table> stack = new Stack<>();
 		Table now = null;
-
+		System.out.println("시작");
 		/**
 		 * 새로운 시도 select를 한 줄롱 읽어서 처리하자
 		 */
@@ -29,59 +30,59 @@ public class QueryTuningMain {
 			if (line.toLowerCase().startsWith("<select")) {
 				String innerLine = "";
 				while ((innerLine = reader.readLine()) != null) {
-					innerLine = innerLine.trim().toLowerCase() +" ";
+					innerLine = innerLine.trim().toLowerCase() + " ";
 					if (innerLine.startsWith("</select")) { // select문만 건져내기
 						arr.add(sb.toString());
-						break;						
+						break;
 					}
 					// sb.append(temp.replace(System.lineSeparator(), " "));
 					// temp = temp.replaceAll("\b", "");
-					innerLine = TuningUtils.removeData(innerLine,"<![cdata[","]]>",true);
-					innerLine = TuningUtils.removeData(innerLine,"<!--","-->",false);
+					// innerLine = TuningUtils.removeData(innerLine, "<![cdata[", "]]>", true);
+					innerLine = TuningUtils.removeData(innerLine, "<!--", "-->", false);
 					sb.append(innerLine);
 				}
 
 			}
 		}
-		
+
 		for (String string : arr) {
 			System.out.println(string);
 		}
 
-
 		// secondShot(list, stack, now, arr, skip);
-//		fuckedup(reader, list, stack, now);
-
+		// fuckedup(reader, list, stack, now);
+		System.out.println("끝");
 	}
 
 	// 조건절 분기
 	private static void secondShot(List<Table> list, Stack<Table> stack, Table now, List<String> arr, boolean skip) {
 		for (String query : arr) {
-//			System.out.println(query);
+			// System.out.println(query);
 			String[] words = query.split(" ");
 			for (int i = 0; i < words.length; i++) {
 				String word = words[i].trim();
-				if(word.equals("<!--")) {
-					skip =true;
-				}else if(word.equals("-->")) {
+				if (word.equals("<!--")) {
+					skip = true;
+				} else if (word.equals("-->")) {
 					skip = false;
 				}
-				if(skip) continue;
-				System.out.printf("%s\n",word);
-//				word.
-				if(word.equals("from")) { // 테이블 생성하고 where 절을 찾는다. 이때 join을 신경써서 찾아야 한다
-					if(words[i+1].startsWith("(")) {
-						now = new Table(words[i+1]);						
+				if (skip)
+					continue;
+				System.out.printf("%s\n", word);
+				// word.
+				if (word.equals("from")) { // 테이블 생성하고 where 절을 찾는다. 이때 join을 신경써서 찾아야 한다
+					if (words[i + 1].startsWith("(")) {
+						now = new Table(words[i + 1]);
 					}
-				}else if(word.startsWith("(select") || word.equals("select")){ // 서브쿼리
-//					System.out.println();
-					if(now!=null) {
+				} else if (word.startsWith("(select") || word.equals("select")) { // 서브쿼리
+					// System.out.println();
+					if (now != null) {
 						stack.add(now);
 						now = null;
 					}
 					// 여기서 열린거 확인한 다음 닫히는 부분 어딘지 찾아내야 한다.
-				}else if(word.equals("where")) { //그만 두는 조건이 나올때까지 조건들을 채굴해내야 한다.
-//					System.out.println();
+				} else if (word.equals("where")) { // 그만 두는 조건이 나올때까지 조건들을 채굴해내야 한다.
+					// System.out.println();
 				}
 			}
 			list.add(now);
