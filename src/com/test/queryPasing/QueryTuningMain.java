@@ -13,7 +13,9 @@ public class QueryTuningMain {
 
 	public static void main(String[] args) throws Exception {
 		// File file = new File("D:\\gdsMgmtMapper.xml");
-		File file = new File("D:/class/MDL/MLIF/webapp/WEB-INF/sqlmap/mariadb/mlif/trnsmit/trnsmitMapper.xml");
+		// File file = new
+		// File("D:/class/MDL/MLIF/webapp/WEB-INF/sqlmap/mariadb/mlif/trnsmit/trnsmitMapper.xml");
+		File file = new File("D:/test/trnsmitMapper.xml");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 		String line = "";
 		List<Table> list = new ArrayList<>();
@@ -30,15 +32,26 @@ public class QueryTuningMain {
 			if (line.toLowerCase().startsWith("<select")) {
 				String innerLine = "";
 				while ((innerLine = reader.readLine()) != null) {
+
 					innerLine = innerLine.trim().toLowerCase() + " ";
+					if (innerLine.indexOf("--") != -1) {
+						innerLine = innerLine.substring(0, innerLine.indexOf("--"));
+					}
 					if (innerLine.startsWith("</select")) { // select문만 건져내기
-						arr.add(sb.toString());
+						String temp = sb.toString();
+						System.out.println(temp);
+						System.out.println(temp.indexOf("<!--"));
+						temp = TuningUtils.removeData(temp, "<!--", "-->", false);
+						System.out.println(temp);
+						arr.add(temp);
 						break;
 					}
 					// sb.append(temp.replace(System.lineSeparator(), " "));
 					// temp = temp.replaceAll("\b", "");
 					// innerLine = TuningUtils.removeData(innerLine, "<![cdata[", "]]>", true);
-					innerLine = TuningUtils.removeData(innerLine, "<!--", "-->", false);
+					// innerLine = TuningUtils.removeData(innerLine, "<!--", "-->", false);
+					// innerLine = TuningUtils.removeData(innerLine, "/*", "*/", false);
+					// System.out.println(innerLine);
 					sb.append(innerLine);
 				}
 
@@ -46,7 +59,7 @@ public class QueryTuningMain {
 		}
 
 		for (String string : arr) {
-			System.out.println(string);
+			// System.out.println(string);
 		}
 
 		// secondShot(list, stack, now, arr, skip);

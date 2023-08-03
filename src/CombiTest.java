@@ -62,7 +62,6 @@ public class CombiTest {
 				visited[i] = true;
 				result[idx] = arr[i];
 				perm2(arr, result, visited, idx + 1);
-				;
 				visited[i] = false;
 			}
 		}
