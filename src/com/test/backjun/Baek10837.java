@@ -13,6 +13,7 @@ public class Baek10837 {
         int C = Integer.parseInt(reader.readLine());
         StringTokenizer st = null;
         StringBuilder sb = new StringBuilder();
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < C; i++) {
             st = new StringTokenizer(reader.readLine());
             int M = Integer.parseInt(st.nextToken());
@@ -20,17 +21,29 @@ public class Baek10837 {
 
             int restM = 0;
             int restN = 0;
+            int diff = Math.abs(M - N);
+            int rest = 0;
             if (N >= M) {
                 restM = K - N;
                 restN = K - N;
+                rest = diff - restN;
             } else {
                 restM = K - M;
                 restN = K - M + 1;
+                rest = diff - restN;
             }
-            sb.append(String.format("%d %d %d %d %d ", M, N, restM, restN, Math.abs(M - N)))
+            if (rest >= 2) {
+                result.append(0).append(System.lineSeparator());
+            } else {
+                result.append(1).append(System.lineSeparator());
+            }
+            sb.append(String.format("%d %d %d %d %d %d %s ", M, N, restM, restN, diff,
+                    rest, rest >= 2 ? "실패" : "성공"))
                     .append(System.lineSeparator());
+
         }
         System.out.println(sb.toString());
+        // System.out.println(result.toString());
     }
 
 }
