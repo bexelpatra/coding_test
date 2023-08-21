@@ -12,8 +12,10 @@ import java.util.Stack;
 public class QueryTuningMain {
 
 	public static void main(String[] args) throws Exception {
-		File file = new File("D:\\gdsMgmtMapper.xml");
-		// File file = new File("D:/class/MDL/MLIF/webapp/WEB-INF/sqlmap/mariadb/mlif/trnsmit/trnsmitMapper.xml");
+		// File file = new File("D:\\gdsMgmtMapper.xml");
+		// File file = new
+		// File("D:/class/MDL/MLIF/webapp/WEB-INF/sqlmap/mariadb/mlif/trnsmit/trnsmitMapper.xml");
+		File file = new File("D:/test/trnsmitMapper.xml");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 		String line = "";
 		List<Table> list = new ArrayList<>();
@@ -37,7 +39,11 @@ public class QueryTuningMain {
 				sb.append(line.substring(line.indexOf("id=\"")+4, line.indexOf("\"",line.indexOf("id=\"")+4)));
 				sb.append("\n");
 				while ((innerLine = reader.readLine()) != null) {
+
 					innerLine = innerLine.trim().toLowerCase() + " ";
+					if (innerLine.indexOf("--") != -1) {
+						innerLine = innerLine.substring(0, innerLine.indexOf("--"));
+					}
 					if (innerLine.startsWith("</select")) { // select문만 건져내기
 						String query = sb.toString();
 						query = TuningUtils.removeData(query, "<!--", "-->", false);
