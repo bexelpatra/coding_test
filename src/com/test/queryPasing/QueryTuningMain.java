@@ -24,6 +24,10 @@ public class QueryTuningMain {
 		System.out.println("시작");
 		/**
 		 * 새로운 시도 select를 한 줄롱 읽어서 처리하자
+		 * 
+		 * 1. 우선 -- 주석을 지워서 한줄로 만든다.
+		 * 2. <!-- --> 주석을 지우자
+		 * 3. cdata를 지우자
 		 */
 		List<String> arr = new ArrayList<>();
 		while ((line = reader.readLine()) != null) {
@@ -31,6 +35,9 @@ public class QueryTuningMain {
 			StringBuffer sb = new StringBuffer();
 			if (line.toLowerCase().startsWith("<select")) {
 				String innerLine = "";
+				sb.append("id : ");
+				sb.append(line.substring(line.indexOf("id=\"")+4, line.indexOf("\"",line.indexOf("id=\"")+4)));
+				sb.append("\n");
 				while ((innerLine = reader.readLine()) != null) {
 
 					innerLine = innerLine.trim().toLowerCase() + " ";
@@ -38,28 +45,55 @@ public class QueryTuningMain {
 						innerLine = innerLine.substring(0, innerLine.indexOf("--"));
 					}
 					if (innerLine.startsWith("</select")) { // select문만 건져내기
-						String temp = sb.toString();
-						System.out.println(temp);
-						System.out.println(temp.indexOf("<!--"));
-						temp = TuningUtils.removeData(temp, "<!--", "-->", false);
-						System.out.println(temp);
-						arr.add(temp);
+						String query = sb.toString();
+						query = TuningUtils.removeData(query, "<!--", "-->", false);
+						query = TuningUtils.removeData(query, "<![cdata[", "]]>", true);
+						query = TuningUtils.removeData(query, "<include", "/>", false);
+						query = query.replaceAll("  ", "");
+						arr.add(query);
 						break;
 					}
-					// sb.append(temp.replace(System.lineSeparator(), " "));
-					// temp = temp.replaceAll("\b", "");
-					// innerLine = TuningUtils.removeData(innerLine, "<![cdata[", "]]>", true);
-					// innerLine = TuningUtils.removeData(innerLine, "<!--", "-->", false);
-					// innerLine = TuningUtils.removeData(innerLine, "/*", "*/", false);
-					// System.out.println(innerLine);
+					int commentSign = innerLine.indexOf("--");
+					if(commentSign>-1){
+						innerLine = innerLine.substring(0, commentSign);
+					};
 					sb.append(innerLine);
 				}
 
 			}
 		}
 
-		for (String string : arr) {
-			// System.out.println(string);
+		// 한줄로 정제된 쿼리...
+		for (String a : arr) {
+			System.out.println(a);
+			int sel = 0;
+			int from = 0;
+			List<Integer> selList =  new ArrayList<>();
+			List<Integer> fromList =  new ArrayList<>();
+			int idx = 0;
+			while((sel = a.indexOf("select",idx))>-1){
+				selList.add(sel);
+				idx = sel+1;
+			}
+	
+			idx = 0;
+			while((from = a.indexOf("from",idx))>-1){
+				fromList.add(from);
+				idx = from+1;
+			}
+			selList.stream().forEach(t -> System.out.printf(t+" "));
+			System.out.println();
+			fromList.stream().forEach(t -> System.out.printf(t+" "));
+			System.out.println();			
+			for (int i = 0; i < selList.size(); i++) {
+				System.out.println(a.substring(selList.get(i), fromList.get(i)+4));
+				if(i+1 == selList.size()){
+					System.out.println(a.substring(fromList.get(i)+4));
+				}else{
+					System.out.println(a.substring(fromList.get(i)+4, selList.get(i+1)));
+				}
+			}
+			System.out.println();
 		}
 
 		// secondShot(list, stack, now, arr, skip);

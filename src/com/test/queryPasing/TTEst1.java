@@ -3,10 +3,6 @@ package com.test.queryPasing;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.zip.InflaterInputStream;
-
-import com.test.utils.Utils;
 
 public class TTEst1 {
 	public static void main(String[] args) throws Exception{
@@ -22,7 +18,7 @@ public class TTEst1 {
 		line = sb.toString();
 		System.out.println(line);
 
-		System.out.println(Utils.br("-", 50));
+		// System.out.println(Utils.br("-", 50));
 		String x = "select /* \r\n"
 		+" 주석속 이야기 \r\n"
 		+" 2. 이것도 주석 \r\n"
