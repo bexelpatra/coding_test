@@ -8,12 +8,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
+//https://st-lab.tistory.com/138
 public class Baek2565 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(reader.readLine());
         StringTokenizer st = null;
-        int[][] arr = new int[n][2];
+        int[][] arr = new int[n][];
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(reader.readLine());
             int a = Integer.parseInt(st.nextToken());
@@ -23,13 +24,9 @@ public class Baek2565 {
         Arrays.sort(arr, (o1, o2) -> {
             return o1[0] - o2[0];
         });
-        List<Integer>[] cross = new ArrayList[n];
-        Arrays.stream(cross).forEach(t -> t = new ArrayList<>());
-        for (int i = 0; i < arr.length - 1; i++) {
-            int[] now = arr[i];
-            for (int j = 0; j < now.length; j++) {
+        StringBuilder sb = new StringBuilder();
+        Arrays.stream(arr).forEach(t -> sb.append(t[0]).append(" ").append(t[1]).append(" "));
 
-            }
-        }
+        System.out.println(sb.toString());
     }
 }

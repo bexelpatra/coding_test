@@ -3,8 +3,8 @@ package com.test.backjun;
 public class FailCompilation {
     public static void main(String[] args) {
         // 실패한 문제
-        String[] failList = new String[] { "16236", "2206", "10158" };
-        String[] failListReason = new String[] { "", "", "" };
+        String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309" };
+        String[] failListReason = new String[] { "", "", "", R.A.reason, R.A.reason };
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < failList.length; i++) {
@@ -15,7 +15,7 @@ public class FailCompilation {
         }
         // 다시 풀고싶은 문제
         String[] doOver = new String[] { "1753", "10837" };
-        String[] doOverReason = new String[] { "", "맞긴는 했는데 값을 중간에는 값을 넣으면서 때려맞춘 느낌" };
+        String[] doOverReason = new String[] { "", R.B.reason };
 
         StringBuilder sb2 = new StringBuilder();
         for (int i = 0; i < doOver.length; i++) {
@@ -27,5 +27,17 @@ public class FailCompilation {
 
         System.out.println(sb.toString());
         System.out.println(sb2.toString());
+    }
+
+    public enum R {
+        A("풀이를 생각하지 못함"),
+        B("논리보다는 임의로 코드를 수정하며 답을 맞춤"),
+        ;
+
+        private String reason;
+
+        private R(String reason) {
+            this.reason = reason;
+        }
     }
 }
