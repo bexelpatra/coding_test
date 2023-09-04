@@ -3,15 +3,32 @@ package com.test.backjun;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
-//https://steady-coding.tistory.com/156
 public class Baek1309 {
     public static int[][] map = new int[4][2];
     public static StringBuilder[] sbs = new StringBuilder[map.length];
 
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(reader.readLine());
+        int[][] dp = new int[n][3];
+        dp[0][0] = 1;
+        dp[0][1] = 1;
+        dp[0][2] = 1;
+
+        for (int i = 1; i < n; i++) {
+            dp[i][0] = (dp[i - 1][0] + dp[i - 1][1] + dp[i - 1][2]) % 9901;
+            dp[i][1] = (dp[i - 1][0] + dp[i - 1][2]) % 9901;
+            dp[i][2] = (dp[i - 1][0] + dp[i - 1][1]) % 9901;
+        }
+        System.out.println((dp[n - 1][0] + dp[n - 1][1] + dp[n - 1][2]) % 9901);
+
+        // getDp(reader);
+
+    }
+
+    // 실패했다.
+    private static void getDp(BufferedReader reader) throws IOException {
         int n = Integer.parseInt(reader.readLine());
         int[][] dp = new int[n + 1][n + 1];
         for (int i = 1; i < dp.length; i++) {
@@ -34,7 +51,6 @@ public class Baek1309 {
         // for (int i = 1; i < 5; i++) { // 1 ~ 4개를 뽑아보자
         // recur(map, new boolean[4][2], i, 0, 0);
         // }
-
     }
 
     // 점화식 i 줄에서 j개의 물건 넣음
