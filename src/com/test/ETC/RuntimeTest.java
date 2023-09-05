@@ -11,21 +11,21 @@ public class RuntimeTest {
 		Runtime rt = Runtime.getRuntime();
 		Process p = null;
 		String path = args[0];
-//		String path = "D:\\class\\DockerTest_jars\\morning\\src\\chromedriver.exe";
+		// String path = "D:\\class\\DockerTest_jars\\morning\\src\\chromedriver.exe";
 		BufferedReader reader = null;
 		InputStream is = null;
 		System.out.println("start!");
 		try {
 			p = rt.exec(path);
-			p.waitFor(3,TimeUnit.SECONDS);
+			p.waitFor(3, TimeUnit.SECONDS);
 			System.out.println("process done");
 			is = p.getInputStream();
 			reader = new BufferedReader(new InputStreamReader(is));
 			String line = "";
 			System.out.println("read start");
-//			while((line = reader.readLine())!=null) {
-//				System.out.println(line);
-//			}
+			// while((line = reader.readLine())!=null) {
+			// System.out.println(line);
+			// }
 			line = reader.readLine();
 			System.out.println(line);
 			p.destroy();
