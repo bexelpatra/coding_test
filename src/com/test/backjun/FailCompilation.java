@@ -3,8 +3,9 @@ package com.test.backjun;
 public class FailCompilation {
     public static void main(String[] args) {
         // 실패한 문제
-        String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309", "1967" };
-        String[] failListReason = new String[] { "", "", "", R.A.reason, R.A.reason, R.C.reason };
+        
+        String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309" ,"11049","1967"};
+        String[] failListReason = new String[] { "", "", "", R.A.reason, R.A.reason, R.A.reason, R.C.reason };
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < failList.length; i++) {
