@@ -1,15 +1,17 @@
 package com.test.practice.z_test;
 
-import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
-
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Deque;
+import java.util.List;
+import java.util.Map;
+import java.util.Stack;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Test {
 //    [[1, 4], [3, 4], [3, 10]]

@@ -6,6 +6,7 @@ import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 // 녹색 옷 입은 애가 젤다지?
+// 다익스트라
 public class Baek4485 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
