@@ -120,3 +120,4 @@ out/production/coding_test/PaymentDto.class
 *.class
 .classpath
 .vscode/settings.json
+*.class
