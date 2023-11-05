@@ -3,6 +3,7 @@ package com.test.backjun;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 브루트 포스 -> 모든 경우의수를 검색했다.
@@ -27,7 +28,9 @@ public class Baek10819 {
 
         if (check(used)) {
             max = Math.max(max, sum(temp));
-            // System.out.println(Arrays.toString(temp));
+            if (sum(temp) == 62) {
+                System.out.println(Arrays.toString(temp));
+            }
             return;
         }
         for (int i = 0; i < arr.length; i++) {
