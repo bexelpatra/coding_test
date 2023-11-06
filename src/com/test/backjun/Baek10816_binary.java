@@ -39,7 +39,6 @@ public class Baek10816_binary {
 		int lo = 0; 
 		int hi = arr.length; 
  
-		// lo가 hi랑 같아질 때 까지 반복
 		while (lo < hi) {
 			int mid = (lo + hi) / 2; 
 			if (key <= arr[mid]) {
