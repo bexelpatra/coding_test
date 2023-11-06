@@ -16,8 +16,9 @@ public class FailCompilation {
                     .append(System.lineSeparator());
         }
         // 다시 풀고싶은 문제
-        String[] doOver = new String[] { "1753", "10837", "1238", "1021", "5397", "10819" };
-        String[] doOverReason = new String[] { "", R.B.reason, R.A.reason, R.D.reason, R.E.reason, "문제 푸는 방법이 따로 있는듯" };
+        String[] doOver = new String[] { "1753", "10837", "1238", "1021", "5397", "10819", "18352" };
+        String[] doOverReason = new String[] { "", R.B.reason, R.A.reason, R.D.reason, R.E.reason, "문제 푸는 방법이 따로 있는듯",
+                "다익스트라 다시 한번 더" };
 
         StringBuilder sb2 = new StringBuilder();
         for (int i = 0; i < doOver.length; i++) {
