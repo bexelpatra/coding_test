@@ -4,9 +4,10 @@ public class FailCompilation {
     public static void main(String[] args) {
         // 실패한 문제
 
-        String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309", "11049", "1967", "13164", "2138" };
+        String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309", "11049", "1967", "13164", "2138",
+                "10971" };
         String[] failListReason = new String[] { "", "", "", R.A.reason, R.A.reason, R.A.reason, R.C.reason, R.A.reason,
-                R.A.reason };
+                R.A.reason, "백트래킹, 조합, 순열 다시 연습..." };
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < failList.length; i++) {
@@ -16,10 +17,9 @@ public class FailCompilation {
                     .append(System.lineSeparator());
         }
         // 다시 풀고싶은 문제
-        String[] doOver = new String[] { "1753", "10837", "1238", "1021", "5397", "10819", "18352" ,"15683"};
+        String[] doOver = new String[] { "1753", "10837", "1238", "1021", "5397", "10819", "18352", "15683", "3986" };
         String[] doOverReason = new String[] { "", R.B.reason, R.A.reason, R.D.reason, R.E.reason, "문제 푸는 방법이 따로 있는듯",
-                "다익스트라 다시 한번 더" ,"속도가 너무 느리고 코드가 간결하지 못하다"};
-        
+                "다익스트라 다시 한번 더", "속도가 너무 느리고 코드가 간결하지 못하다", "스택쓰지 않고 바로 풀어보는 방법 연습" };
 
         StringBuilder sb2 = new StringBuilder();
         for (int i = 0; i < doOver.length; i++) {
