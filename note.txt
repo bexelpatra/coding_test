@@ -8,3 +8,6 @@ Ehcache
 
 스프링 cs 지식들
 https://dahye-jeong.gitbook.io/til/spring/2020-04-10-aop-dynamicproxy
+
+openssl
+https://m.blog.naver.com/PostView.naver?blogId=keikeiem&logNo=222315944181&categoryNo=27&proxyReferer=
