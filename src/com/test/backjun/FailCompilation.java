@@ -5,9 +5,9 @@ public class FailCompilation {
         // 실패한 문제
 
         String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309", "11049", "1967", "13164", "2138",
-                "10971" };
+                "10971", "1057" };
         String[] failListReason = new String[] { "", "", "", R.A.reason, R.A.reason, R.A.reason, R.C.reason, R.A.reason,
-                R.A.reason, "백트래킹, 조합, 순열 다시 연습..." };
+                R.A.reason, "백트래킹, 조합, 순열 다시 연습...", "간단해 보이는데 멀리 돌아가버리고 있다..." };
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < failList.length; i++) {
