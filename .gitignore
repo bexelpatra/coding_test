@@ -121,3 +121,10 @@ out/production/coding_test/PaymentDto.class
 .classpath
 .vscode/settings.json
 *.class
+.classpath
+.vscode/launch.json
+src/com/test/ETC/HTTP.java
+src/com/test/EXCEL/MakeQueryUseExcel.java
+src/com/test/TEST/TTest3.java
+src/com/test/TEST/TTest5.java
+src/com/test/utils/testfile/TimeCheck.java
