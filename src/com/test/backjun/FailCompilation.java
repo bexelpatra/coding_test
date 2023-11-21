@@ -5,10 +5,10 @@ public class FailCompilation {
         // 실패한 문제
 
         String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309", "11049", "1967", "13164", "2138",
-                "10971", "10972", "1057", "2470" };
+                "10971", "10972", "1057", "2470", "1629" };
         String[] failListReason = new String[] { "", "", "", R.A.reason, R.A.reason, R.A.reason, R.C.reason, R.A.reason,
                 R.A.reason, "백트래킹, 조합, 순열 다시 연습...", "간단해 보이는데 멀리 돌아가버리고 있다...", "순열 문제에서 생각해볼 만한 것...재귀가 능사는 아니다.",
-                "이분탐색 같아서 풀었는데 어떤 점에서 틀린건지 못 찾겠다." };
+                "이분탐색 같아서 풀었는데 어떤 점에서 틀린건지 못 찾겠다.", "모듈러 연산에 대해 전혀 몰랐다." };
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < failList.length; i++) {
