@@ -1,7 +1,5 @@
 package com.test.TEST;
 
-import org.apache.hc.client5.http.utils.Hex;
-
 public class TTest13 {
     public static void main(String[] args) {
         String temp = "1234";

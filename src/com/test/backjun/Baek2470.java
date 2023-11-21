@@ -9,6 +9,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
+
+/*
+이분탐색으로 생각했다.
+1. 이분탐색시 탐색 방향을 잡을 조건을 찾기위해서 고민했지만 적절한 방법을 찾지 못했다.
+2. 탐색 시작 전에 위 아래로 훑어보는 것도 시도해볼법 해 보인다.
+ */
 public class Baek2470 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
