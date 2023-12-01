@@ -13,10 +13,27 @@ public class Baek1992 {
         for (int i = 0; i < n; i++) {
             map[i] = reader.readLine().toCharArray();
         }
-        
+        recursive(0, 0, n, 0);
+        System.out.println(sb.toString());
     }
-    public static void recursive(int y, int x,int len){
+    static StringBuilder sb = new StringBuilder();
+    public static void recursive(int y, int x,int len,int po){
+        if(check(y, x, len)){
+            //  po위치에 따라서 값이 달라진다..? 
+            char now = map[y][x];
+            sb.append(now);
+            return;
+        }
+        int next = len/2;
+        sb.append("(");
+        recursive(y, x, next, 0);  // 좌상
         
+        recursive(y, x+next, next, 1); // 우상
+        
+        recursive(y+next, x, next, 2); // 좌하
+        
+        recursive(y+next, x+next, next, 3); // 우하
+        sb.append(")");
     }
 
     public static boolean check(int y, int x, int len){

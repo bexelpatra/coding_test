@@ -24,8 +24,15 @@ public class TTest13 {
 
         
 
-        
-        combi(new int[3], new boolean[arr.length], 0, 0);
+        Integer[] i = new Integer[3];
+        ;
+        int[][] arr = new int[4][2];
+        System.out.println(Arrays.toString(i));
+
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println(Arrays.toString(arr[j]));
+        }
+        // combi(new int[3], new boolean[arr.length], 0, 0);
         
         
     }
