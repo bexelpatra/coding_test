@@ -21,6 +21,23 @@ public class CompareTest {
         // ByteArrayInputStream(sb.toString().getBytes())));
         // getR2(random);
         // get1261(random);
+        // get1057(random);
+        StringBuffer sb = new StringBuffer();
+        int loop = random.nextInt(6) + 1;
+        sb.append(loop).append("\n");
+        for (int i = 0; i < loop; i++) {
+            int funcCnt = random.nextInt(5) + 1;
+            for (int j = 0; j < funcCnt; j++) {
+                sb.append(random.nextInt(2) == 1 ? 'R' : 'D');
+            }
+            sb.append("\n");
+            int dqCnt = random.nextInt(5) + 1;
+
+        }
+
+    }
+
+    private static void get1057(Random random) throws Exception {
         String a = "";
         StringBuilder sb = new StringBuilder();
         int max = 99;
@@ -55,7 +72,6 @@ public class CompareTest {
             a = sb.toString();
         }
         ;
-
     }
 
     private static void get1261(Random random) {
