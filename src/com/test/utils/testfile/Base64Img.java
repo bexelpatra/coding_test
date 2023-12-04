@@ -14,7 +14,7 @@ import javax.xml.bind.DatatypeConverter;
 
 public class Base64Img {
     public static void main(String[] args) throws IOException {
-        String b = "";
+        String b = "d://eye.txt";
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(b))));
         StringBuilder sb = new StringBuilder();
@@ -24,7 +24,7 @@ public class Base64Img {
             sb.append(buf, 0, n);
         }
         System.out.println(sb.toString());
-        // System.out.println(decoder(b, "d:/test/im.jpg"));
+        System.out.println(decoder(sb.toString(), "d:/test/im.jpg"));
     }
 
     public static boolean decoder(String base64, String target) {
