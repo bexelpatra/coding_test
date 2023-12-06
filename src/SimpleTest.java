@@ -1,5 +1,7 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -32,7 +34,6 @@ public class SimpleTest {
 		for (String string : a) {
 			System.out.println("시작" + string);
 		}
-
 	}
 
 	// combi test
