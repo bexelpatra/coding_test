@@ -5,10 +5,10 @@ public class FailCompilation {
         // 실패한 문제
 
         String[] failList = new String[] { "16236", "2206", "10158", "2565", "1309", "11049", "1967", "13164", "2138",
-                "10971", "10972", "1057", "2470", "1629" ,"3015","b_4179"};
+                "10971", "10972", "1057", "2470", "1629" ,"3015","b_4179","15991","2240"};
         String[] failListReason = new String[] { "", "", "", R.A.reason, R.A.reason, R.A.reason, R.C.reason, R.A.reason,
                 R.A.reason, "백트래킹, 조합, 순열 다시 연습...", "간단해 보이는데 멀리 돌아가버리고 있다...", "순열 문제에서 생각해볼 만한 것...재귀가 능사는 아니다.",
-                "이분탐색 같아서 풀었는데 어떤 점에서 틀린건지 못 찾겠다.", "모듈러 연산에 대해 전혀 몰랐다.","Stack에 대해서..." ,"메모리 초과가 나오는데 아직 이유를 모르겠다."};
+                "이분탐색 같아서 풀었는데 어떤 점에서 틀린건지 못 찾겠다.", "모듈러 연산에 대해 전혀 몰랐다.","Stack에 대해서..." ,"메모리 초과가 나오는데 아직 이유를 모르겠다.","분류 안나오는 문제에서 명확하게 구현할 방법을 떠올리지 못했다.","구현 방법을 떠올리지 못함"};
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < failList.length; i++) {
@@ -18,9 +18,9 @@ public class FailCompilation {
                     .append(System.lineSeparator());
         }
         // 다시 풀고싶은 문제
-        String[] doOver = new String[] { "1753", "10837", "1238", "1021", "5397", "10819", "18352", "15683", "3986" };
+        String[] doOver = new String[] { "1753", "10837", "1238", "1021", "5397", "10819", "18352", "15683", "3986" ,"10942"};
         String[] doOverReason = new String[] { "", R.B.reason, R.A.reason, R.D.reason, R.E.reason, "문제 푸는 방법이 따로 있는듯",
-                "다익스트라 다시 한번 더", "속도가 너무 느리고 코드가 간결하지 못하다", "스택쓰지 않고 바로 풀어보는 방법 연습" };
+                "다익스트라 다시 한번 더", "속도가 너무 느리고 코드가 간결하지 못하다", "스택쓰지 않고 바로 풀어보는 방법 연습" ,"펠린드럼을 푸는 여러가지 방법"};
 
         StringBuilder sb2 = new StringBuilder();
         for (int i = 0; i < doOver.length; i++) {

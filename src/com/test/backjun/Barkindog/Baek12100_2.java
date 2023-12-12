@@ -1,11 +1,9 @@
 package com.test.backjun.Barkindog;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
@@ -28,7 +26,6 @@ public class Baek12100_2 {
 
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        os = new FileOutputStream(new File("d://result.txt"));
         int n = Integer.parseInt(reader.readLine());
 
         origin = new int[n][n];
@@ -42,48 +39,19 @@ public class Baek12100_2 {
             }
         }
         copyOrigin();
-        // recur(new int[5], 0);
-
-        int[] arr = { 2, 3, 2, 3, 3 };
-        for (int i : arr) {
-            move(i);
-            print(map);
-        }
+        recur(new int[5], 0);
 
         System.out.println(max);
     }
-
     // 0 우 1 하 2 좌 3 상
     static FileOutputStream os;
     static int[] directions = { 0, 1, 2, 3 };
-
-    public static void print(int[][] arrr) {
-        for (int[] is : arrr) {
-            System.out.println(Arrays.toString(is));
-            try {
-                os.write(Arrays.toString(is).getBytes());
-                os.write("\n".getBytes());
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            os.write("\n".getBytes());
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        System.out.println();
-    }
 
     public static void recur(int[] order, int idx) {
         if (idx == order.length) {
             for (int i : order) {
                 move(i);
             }
-            // System.out.println(Arrays.toString(order));
-            print(map);
             copyOrigin();
             return;
         }
@@ -130,8 +98,9 @@ public class Baek12100_2 {
                     int now = dq.pollLast();
                     if (start == now) {
                         arr[idx] *= 2;
-                        start = arr[idx];
-                        max = Math.max(start, max);
+                        // start = arr[idx];
+                        start = 0;
+                        max = Math.max(arr[idx], max);
                     } else {
                         arr[idx - 1] = now;
                         start = arr[idx - 1];
@@ -145,8 +114,9 @@ public class Baek12100_2 {
                     int now = dq.pollFirst();
                     if (start == now) {
                         arr[idx] *= 2;
-                        start = arr[idx];
-                        max = Math.max(start, max);
+                        // start = arr[idx];
+                        start = 0;
+                        max = Math.max(arr[idx], max);
                     } else {
                         arr[idx + 1] = now;
                         start = arr[idx + 1];
@@ -166,9 +136,13 @@ public class Baek12100_2 {
 
     public static void move(int a) {
         int len = map.length;
-        for (int i = 0; i < len; i++) {
-            for (int j = 0; j < len; j++) {
-                trim(i, j, a);
+        if(a%2==0){ //  좌우
+            for (int i = 0; i < len; i++) {
+                trim(i, 0, a);
+            }
+        }else{ // 상하
+            for (int i = 0; i < len; i++) {
+                trim(0, i, a);
             }
         }
     }
