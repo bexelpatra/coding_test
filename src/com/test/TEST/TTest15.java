@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class TTest15 {
     public static void main(String[] args) {
@@ -38,7 +39,11 @@ public class TTest15 {
             hm.put("1", 2);
         }
         hm.forEach((t, u) -> System.out.println(t + ":"+u));
-        
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        ;
+        System.out.println(pq.poll());
+        pq.poll();
+        pq.poll();
     }
     public static void Print(int[][] map ){
         StringBuilder sb=  new StringBuilder();
