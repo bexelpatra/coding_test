@@ -13,7 +13,7 @@ public class TTest16 {
         System.out.println(map.ceilingKey(5));
         
         StringBuilder sb  = new StringBuilder();
-        for (byte b : "MLDDEVSAMPLEKEY!".getBytes()) {
+        for (byte b : "bddd".getBytes()) {
             sb.append(b).append(",");
         }
         System.out.println(sb.toString());
