@@ -35,7 +35,7 @@ public class TTest16 {
         re(node.map);
         // System.out.println(ssb.toString());
         Map<Integer,String> map2 = new HashMap<>();
-        map2.put(1, "있음 ");
+        // map2.put(1, "있음 ");
         map2.computeIfAbsent(1, key->{
             return String.valueOf(key*3);
         });
