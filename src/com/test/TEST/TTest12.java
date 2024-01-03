@@ -10,7 +10,9 @@ public class TTest12 {
         int n = 4;
         arr = IntStream.range(1, n+1).toArray();
         int m =7;
-        dfs(new boolean[n], new int[n], 0);
+
+        System.out.println((char)('a' -32));
+        // dfs(new boolean[n], new int[n], 0);
     }
     public static void dfs(boolean[] visited,int[] temp, int idx){
         if(idx == visited.length){

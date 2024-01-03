@@ -6,37 +6,54 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
- * trie 라는 방식
- * 메모리는 많이 잡아먹지만 빠르다.
- */
+// trie 방식
 public class Baek5052_2 {
     public static void main(String[] args) throws NumberFormatException, IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int loop = Integer.parseInt(reader.readLine());
-        StringBuilder sb = new StringBuilder();
+        StringBuffer sb = new StringBuffer();
         while(loop-->0){
             int n = Integer.parseInt(reader.readLine());
-
+            Node node = new Node();
+            for (int i = 0; i < n; i++) {                
+                node.insert(reader.readLine());
+            }
+            if(flag){
+                sb.append("YES");
+            }else{
+                sb.append("NO");
+            }
+            sb.append("\n");
+            flag = true;
         }
         System.out.println(sb.toString());
+
     }
-    static class node{
-        boolean isEnd;
-        Map<Integer,node> map = new HashMap<>();
-        boolean  insert(String number,int idx){
-            node now = this;
-            if(idx ==number.length()){
-                isEnd = true;
-                return true;
+    static boolean flag = true;
+    static class Node{
+        Map<Character,Node> map = new HashMap<>();
+        boolean end;
+        boolean haveMore;
+
+        void insert(String str){
+            Node now = this;
+            int len = str.length();
+            for (int i = 0; i < len; i++) {
+                if(now.map.get(str.charAt(i)) == null) {
+                    now.map.put(str.charAt(i), new Node());
+                }
+                now = now.map.get(str.charAt(i));
+                if(i < len-1){
+                    now.haveMore = true;
+                }
+                if(now.haveMore && now.end){
+                    flag = false;
+                }
             }
-            int key = number.charAt(idx)-'0';
-            if(map.get(key)==null){
-                map.put(key, new node());
-                insert(number, idx+1);
+            now.end = true;
+            if(now.haveMore && now.end){
+                flag=false;
             }
-            
-            return false;
         }
     }
 }

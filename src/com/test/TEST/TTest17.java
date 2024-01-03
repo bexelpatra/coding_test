@@ -27,10 +27,16 @@ public class TTest17 {
             tree.add(r);
         }
         sb.append("\n");
-        tree.forEach(t ->sb.append(t).append(" ") );
         
         System.out.println(tree.last());
         
+        tree.add(100);
+        tree.forEach(t ->sb.append(t).append(" ") );
         System.out.println(sb.toString());
+        System.out.println(tree.ceiling(99));
+
+        String a = "12";
+        String b= "12340";
+        System.out.println(a.compareTo(b));
     }
 }
