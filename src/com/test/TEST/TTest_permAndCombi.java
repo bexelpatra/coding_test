@@ -10,31 +10,13 @@ import java.util.Arrays;
 
 import com.test.backjun.Barkindog.Baek12100_2;
 
-public class TTest {
+public class TTest_permAndCombi {
     public static void main(String[] args) throws IOException {
         arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i+1;
         }
         combi(new int[m],new boolean[n], 0,0);
-        
-        // BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("d://baek.txt")));
-        // // BufferedReader param = ;
-        // String line = "";
-        // while((line = reader.readLine())!= null){
-        //     StringBuilder sb= new StringBuilder();
-            
-        //     int n = Integer.parseInt(line);
-        //     sb.append(n).append("\n");
-        //     for (int i = 0; i < n; i++) {
-        //         sb.append(reader.readLine()).append("\n");
-        //     }
-            
-        //     // System.out.println(sb.toString());
-        //     String result = Baek12100_2.getString(new BufferedReader(new InputStreamReader(new ByteArrayInputStream(sb.toString().getBytes()))));
-        //     System.out.printf("%s %s \n",result,reader.readLine().replaceAll("[^0-9]", ""));
-        // }
-
         char[][] a = new char[4][];
         String[] str = {"abc","11adffdad","asdf","가나다라"};
         for (int i = 0; i < a.length; i++) {

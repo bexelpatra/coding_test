@@ -38,5 +38,31 @@ public class TTest17 {
         String a = "12";
         String b= "12340";
         System.out.println(a.compareTo(b));
+        String bond = "02ja5mes007";
+        
+        for (String s : bond.split("[a-z]+")) {
+            System.out.println(s);
+        }
+        System.out.println("1".compareTo("2"));
+        PriorityQueue<String> pq = new PriorityQueue<>((o1, o2) -> {
+            if(o1.length() == o2.length()){
+                // for (int i = 0; i < o1.length(); i++) {
+                //     if(o1.charAt(i)>o2.charAt(i)) return 1;
+                //     if(o1.charAt(i)<o2.charAt(i)) return -1;
+                // }
+                return o1.compareTo(o2);
+            }
+            return o1.length() - o2.length();
+        });
+        
+        pq.add("1");
+        pq.add("12");
+        pq.add("50");
+        pq.add("9");
+
+        while(!pq.isEmpty()){
+            System.out.println(pq.poll());
+        }
+        
     }
 }

@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.util.StringTokenizer;
 
-public class Ttest2 {
+public class Ttest2_bigDeciaml {
     public static void main(String[] args) throws Exception{
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st= new StringTokenizer(reader.readLine());
@@ -24,9 +24,7 @@ public class Ttest2 {
         b = b.remainder(BigDecimal.valueOf(10007));
         System.out.println(b);
         // calc(c7, c8);
-        if (true){
-            return;
-        }
+        
         for (int n = 2; n < 7; n++) {
             
             for (int i = 0; i < n; i++) {
