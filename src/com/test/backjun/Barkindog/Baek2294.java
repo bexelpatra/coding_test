@@ -32,7 +32,7 @@ public class Baek2294 {
             }
         }
 
-        // System.out.println(Arrays.toString(dp));
+        System.out.println(Arrays.toString(dp));
         if(dp[m] == 100_000_000){
             dp[m] = -1;
         }

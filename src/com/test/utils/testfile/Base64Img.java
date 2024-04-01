@@ -5,12 +5,12 @@ import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Base64;
 
 import javax.imageio.ImageIO;
-import javax.xml.bind.DatatypeConverter;
+// import javax.xml.bind.DatatypeConverter;
 
 public class Base64Img {
     public static void main(String[] args) throws IOException {
@@ -23,18 +23,15 @@ public class Base64Img {
         while ((n = reader.read(buf, 0, buf.length)) > 0) {
             sb.append(buf, 0, n);
         }
-        System.out.println(sb.toString());
         System.out.println(decoder(sb.toString(), "d:/test/im.jpg"));
+        reader.close();
     }
 
     public static boolean decoder(String base64, String target) {
-
-        String data = base64;
-
-        byte[] imageBytes = DatatypeConverter.parseBase64Binary(data);
-
+        
+        // byte[] imageBytes = DatatypeConverter.parseBase64Binary(base64);
+        byte[] imageBytes = Base64.getDecoder().decode(base64.getBytes());
         try {
-
             BufferedImage bufImg = ImageIO.read(new ByteArrayInputStream(imageBytes));
 
             ImageIO.write(bufImg, "jpg", new File(target));
