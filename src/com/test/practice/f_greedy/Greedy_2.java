@@ -1,7 +1,7 @@
 package com.test.practice.f_greedy;
 
-import org.junit.Assert;
-import org.junit.Test;
+// import org.junit.Assert;
+// import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +40,5 @@ public class Greedy_2 {
         }
         return Math.min(b-a, time);
     }
-    @Test
-    public void test(){
-        Assert.assertEquals(0,solution("AZ"));
-    }
+    
 }

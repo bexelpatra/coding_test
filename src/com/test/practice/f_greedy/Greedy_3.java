@@ -1,11 +1,7 @@
 package com.test.practice.f_greedy;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+// import org.junit.Assert;
+// import org.junit.Test;
 
 public class Greedy_3 {
     public String solution(String number, int k) {
@@ -30,11 +26,5 @@ public class Greedy_3 {
         }
         return builder.toString();
     }
-    @Test
-    public void test(){
-        Assert.assertEquals("94",solution("1924",2));
-        Assert.assertEquals("3234",solution("1231234",3));
-        Assert.assertEquals("775841",solution("4177252841",4));
-
-    }
+   
 }

@@ -1,7 +1,7 @@
 package com.test.practice.g_dynamic_programming;
 
-import org.junit.Assert;
-import org.junit.Test;
+// import org.junit.Assert;
+// import org.junit.Test;
 
 import java.util.Arrays;
 
@@ -86,11 +86,5 @@ public class DynamicProgramming_3 {
         }
         return answer;
     }
-    @Test
-    public void test(){
-//        Assert.assertEquals(1000000007,1000*100*100*100 +7);
-//        Assert.assertEquals(4,solution2(4,3,new int[][]{{2,2}}));
-        solution3(4,3,new int[][]{{2,2}});
-    }
-
+  
 }

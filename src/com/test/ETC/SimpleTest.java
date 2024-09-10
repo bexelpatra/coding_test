@@ -1,10 +1,9 @@
 package com.test.ETC;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.commons.collections4.map.HashedMap;
 
 public class SimpleTest {
 
@@ -19,7 +18,7 @@ public class SimpleTest {
 //		System.out.println(list.size());
 		System.out.println(String.format("%-3d,%2d",10,100));
 		
-		Map<String,String> map = new HashedMap<>();
+		Map<String,String> map = new HashMap<>();
 		map.put("a", "kim");
 		map.put("b", "lee");
 		map.put("c", "park");

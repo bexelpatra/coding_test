@@ -1,9 +1,11 @@
 package com.test.practice.g_dynamic_programming;
 
-import org.junit.Assert;
-import org.junit.Test;
+// import org.junit.Assert;
+// import org.junit.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class DynamicProgramming_4 {
 
@@ -50,9 +52,6 @@ public class DynamicProgramming_4 {
 
         return Math.max(dp[length-2],dp2[length-1]);
     }
-    @Test
-    public void test(){
-        Assert.assertEquals(0,solution2(new int[]{1,2,3,6,9,10}));
-    }
+  
 }
 

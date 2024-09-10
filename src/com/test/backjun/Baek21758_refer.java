@@ -3,11 +3,8 @@ package com.test.backjun;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
-import org.apache.commons.compress.parallel.InputStreamSupplier;
 
 public class Baek21758_refer {
    	static int n;					// n 개 장소

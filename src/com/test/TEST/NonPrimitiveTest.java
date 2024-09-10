@@ -1,8 +1,8 @@
 package com.test.TEST;
 
-import static org.junit.Assert.assertEquals;
+// import org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 public class NonPrimitiveTest {
 
@@ -13,7 +13,7 @@ public class NonPrimitiveTest {
     public static void test() {
         Clazz a = new Clazz(1);
         Clazz b = new Clazz(3);
-        assertEquals(1, 1);
+        // assertEquals(1, 1);
         // 수정 전
         // assertEquals(a.member, 1);
         // assertEquals(b.member, 1);

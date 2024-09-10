@@ -1,14 +1,12 @@
 package com.test.practice.f_greedy;
 
-import com.test.practice.MyUtil;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.test.practice.MyUtil;
 
 public class Greedy_6 {
     public class Route{
@@ -109,11 +107,5 @@ public class Greedy_6 {
         return cnt;
     }
 
-    @Test
-    public void test(){
-//        Assert.assertEquals(2,solution(new int[][]{{-20,1},{-20,15},{-14,-5},{-18,-13},{-5,-3}}));
-//        solution2(new int[][]{{-20,15},{-14,-5},{-18,-13},{-5,-3}});
-//        solution2(new int[][]{{-100,100},{50,170},{150,200},{-50,-10},{10,20},{30,40}});
-        solution2(MyUtil.squareArray("[[-20, -15], [-14, -5], [-18, -13], [-5, -3]]"));
-    }
+  
 }

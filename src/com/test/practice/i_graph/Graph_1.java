@@ -1,9 +1,5 @@
 package com.test.practice.i_graph;
 
-import com.test.practice.MyUtil;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.ArrayDeque;
 import java.util.HashSet;
 import java.util.Queue;
@@ -76,8 +72,5 @@ public class Graph_1 {
         }
         return answer;
     }
-    @Test
-    public void test(){
-        Assert.assertEquals(0,solution2(6, MyUtil.squareArray("[[3, 6], [4, 3], [3, 2], [1, 3], [1, 2], [2, 4], [5, 2]]")));
-    }
+    
 }

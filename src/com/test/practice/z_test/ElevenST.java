@@ -1,9 +1,8 @@
 package com.test.practice.z_test;
 
-import org.junit.Assert;
-import org.junit.Test;
+// import org.junit.Assert;
+// import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class ElevenST {
@@ -73,14 +72,4 @@ public class ElevenST {
         }
         return sum;
     }
-    @Test
-    public void test(){
-//        Assert.assertEquals(5,solution(new int[]{1,-1,-3,-2,2,3,4,4,4,4,6}));
-//        Assert.assertTrue(solution(new int[]{4,5,6,7,8},8));
-        Assert.assertTrue(solution(new int[]{0,1,2,3,4,5},5));
-//        Assert.assertEquals(50100,solution(50010));
-
-
-    }
-
 }

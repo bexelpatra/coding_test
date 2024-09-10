@@ -1,8 +1,12 @@
 package com.test.practice.f_greedy;
 
-import org.junit.Test;
+// import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Greedy_5 {
@@ -43,8 +47,5 @@ public class Greedy_5 {
         return answer;
     }
 
-    @Test
-    public void test(){
-
-    }
+    
 }

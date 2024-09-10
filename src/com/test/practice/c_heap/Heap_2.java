@@ -1,8 +1,8 @@
 package com.test.practice.c_heap;
-import com.test.practice.MyUtil;
-import org.junit.Test;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
 public class Heap_2 {
     // 오답
     public int solution(int[][] jobs) {
@@ -107,9 +107,4 @@ public class Heap_2 {
         return (int)Math.floor(answer/jobs.length);
     }
 
-
-    @Test
-    public void test(){
-        solution4(MyUtil.squareArray("[[0, 3], [1, 9], [2, 6]]"));
-    }
 }

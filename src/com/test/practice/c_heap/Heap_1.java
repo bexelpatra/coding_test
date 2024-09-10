@@ -1,6 +1,6 @@
 package com.test.practice.c_heap;
 
-import org.junit.Test;
+// // import org.junit.Test;
 
 import java.util.PriorityQueue;
 
@@ -58,9 +58,5 @@ public class Heap_1 {
             sum = a+ b*2;
         }
         return sum;
-    }
-    @Test
-    public void test(){
-
     }
 }

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import org.apache.commons.io.output.FileWriterWithEncoding;
+// import org.apache.commons.io.output.FileWriterWithEncoding;
 
 public class FileContentUpdate {
 
@@ -109,7 +109,8 @@ public class FileContentUpdate {
 			File dst = new File(path + "temp.properties");
 
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(src), "ISO-8859-1"));
-			BufferedWriter writer = new BufferedWriter(new FileWriterWithEncoding(dst, "ISO-8859-1"));
+			// BufferedWriter writer = new BufferedWriter(new FileWriterWithEncoding(dst, "ISO-8859-1"));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(dst));
 			String line = null;
 			while ((line = reader.readLine()) != null) {
 				System.out.println(new String(line.getBytes("ISO-8859-1"), "UTF-8"));

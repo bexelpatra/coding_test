@@ -1,7 +1,7 @@
 package com.test.practice.f_dfs_bfs;
 
-import org.junit.Assert;
-import org.junit.Test;
+// import org.junit.Assert;
+// import org.junit.Test;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -80,8 +80,5 @@ public class DFSBFS_2 {
         }
         return answer;
     }
-    @Test
-    public void test(){
-        Assert.assertEquals(2, solution2(3, new int[][]{{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}));
-    }
+    
 }

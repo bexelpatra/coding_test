@@ -1,6 +1,6 @@
 package com.test.practice.z_test;
 
-import org.junit.Test;
+// import org.junit.Test;
 
 public class Decipher {
     public int solution(String s) {
@@ -124,21 +124,21 @@ public class Decipher {
         return initPalindromeLen;
     }
 
-    @Test
-    public void test(){
-        solution3("aba");
-        solution3("토마토맛수프맛프수");
-        solution3("xabay");
-        solution3("abcdee");
-        solution3("aa");
-        solution3("a");
-        solution3("ae");
-        solution3("aaee");
-        solution3("aaa");
-        solution3("aaae");
-        solution3("aaaee");
-        solution3("aaaeeee");
-        solution3("aaaa");
-        solution3("aaaaaㅁㄴㅇㄻㄴ아리러릏eeeeeeekㅐㅇ9ㄻ9ㄴㄴㄴㄴ");
-    }
+    // @Test
+    // public void test(){
+    //     solution3("aba");
+    //     solution3("토마토맛수프맛프수");
+    //     solution3("xabay");
+    //     solution3("abcdee");
+    //     solution3("aa");
+    //     solution3("a");
+    //     solution3("ae");
+    //     solution3("aaee");
+    //     solution3("aaa");
+    //     solution3("aaae");
+    //     solution3("aaaee");
+    //     solution3("aaaeeee");
+    //     solution3("aaaa");
+    //     solution3("aaaaaㅁㄴㅇㄻㄴ아리러릏eeeeeeekㅐㅇ9ㄻ9ㄴㄴㄴㄴ");
+    // }
 }

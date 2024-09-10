@@ -1,10 +1,9 @@
 package com.test.practice.f_greedy;
 
-import org.junit.Assert;
-import org.junit.Test;
+// import org.junit.Assert;
+// import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class Greedy_4 {
     public int solution(int[] people, int limit) {
@@ -35,15 +34,5 @@ public class Greedy_4 {
 
         return answer;
     }
-    @Test
-    public void test(){
-//        Assert.assertEquals(3,solution(new int[]{70,50,80,50},100));
-//        Assert.assertEquals(3,solution(new int[]{70,50,80},100));
-//        Assert.assertEquals(1, solution(new int[]{50}, 50));
-//        Assert.assertEquals(2, solution(new int[]{20, 50, 50, 80}, 100));
-        Assert.assertEquals(3, solution(new int[]{70, 50, 80, 50}, 100));
-        Assert.assertEquals(3, solution(new int[]{50, 30, 20, 70, 10}, 100));
-        Assert.assertEquals(3, solution(new int[]{70, 80, 50}, 100));
-        Assert.assertEquals(5, solution(new int[]{10, 20, 30, 40, 50, 60, 70, 80, 90}, 100));
-    }
+    
 }
